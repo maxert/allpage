@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick-theme.css" />
+
     <title>Document</title>
 </head>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
 
 <body>
     <div class="wrapper">
@@ -186,7 +191,30 @@
                     ADD YOUR PHOTO
                 </button>
                 <div class="slider-photo">
-                    
+                        <button class="slick-prev" aria-label="Previous" type="button"></button>
+                    <div class="center slider">
+                        <div>
+                            <img class="slides-photo" src="img/box.png">
+                        </div>
+                        <div>
+                            <img class="slides-photo" src="img/1.png">
+                        </div>
+                        <div>
+                            <img class="slides-photo" src="img/2.png">
+                        </div>
+                        <div>
+                            <img class="slides-photo" src="img/3.png">
+                        </div>
+                        <div>
+                            <img class="slides-photo" src="img/4.png">
+                        </div>
+                        <div>
+                            <img class="slides-photo" src="img/5.png">
+                        </div>
+
+                    </div>
+                    <button class="slick-next" aria-label="Next" type="button" ></button>
+
                 </div>
 
             </div>
@@ -220,6 +248,16 @@
         x[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " red";
     }
+</script>
+<script src="slick.min.js"></script>
+<script>    
+    $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 5,
+        slidesToScroll: 3
+    });
 </script>
 
 </html>
