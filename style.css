@@ -113,38 +113,99 @@ a:focus {
   width: 100%;
   z-index: -1;
   position: relative;
-
 }
-.backgraund-header
-{
-    -webkit-box-shadow: inset 0px 195px 29px -187px rgba(0,0,0,0.45);
-    -moz-box-shadow: inset 0px 195px 29px -187px rgba(0,0,0,0.45);
-    box-shadow: inset 0px 195px 29px -187px rgba(0,0,0,0.45);
-    position: relative;
+.backgraund-header {
+  -webkit-box-shadow: inset 0px 195px 29px -187px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: inset 0px 195px 29px -187px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0px 195px 29px -187px rgba(0, 0, 0, 0.45);
+  position: relative;
 }
-.text-backgraund>p
-{
-    margin: 0 auto;
-    max-width: 1600px;
-        font-size: 50px;
-        font-family: "Ubuntu";
-        color: rgb(255, 255, 255);
-        font-weight: bold;
-        text-transform: uppercase;
-        line-height: 0.9;
-        text-shadow: 0px 2px 4px rgba(13, 13, 13, 0.35);
-
-      
+.text-backgraund > p {
+  margin: 0 auto;
+  max-width: 1600px;
+  font-size: 50px;
+  font-family: "Ubuntu";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 0.9;
+  text-shadow: 0px 2px 4px rgba(13, 13, 13, 0.35);
 }
-.text-backgraund
-{
-    top: 50%;
-    width: 100%;
-    position: absolute;
-    transform: translate(0%, -50%) ;
-    margin:auto 0 auto 0;
+.text-backgraund {
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  transform: translate(0%, -50%);
+  margin: auto 0 auto 0;
 }
 
 /*контент*/
+.content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
 
 /*Товар*/
+.mySlides {
+  display: none;
+}
+.light-grey,
+.light-grey:hover,
+.light-grey,
+.light-grey:hover {
+  color: #000 !important;
+  background-color: #f1f1f1 !important;
+}
+.button-content > button {
+  border: 0;
+  background: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.button-content > button.demo > img {
+  width: 40px;
+  height: 40px;
+}
+.content-photo {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.content-photo > img {
+  height: auto;
+  width: 100%;
+  max-width: 600px;
+  max-height: 470px;
+}
+.item-photo {
+  display: inline-block;
+  max-width: 890px;
+}
+/*информация о товаре*/
+.item-info {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 720px;
+}
+.add {
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(156, 195, 0);
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
+  font-family: "Ubuntu";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.item-info > p:nth-child(7) {
+  font-size: 15px;
+  font-family: "Arial";
+  color: rgb(0, 0, 0);
+  line-height: 1.667;
+  text-align: left;
+}

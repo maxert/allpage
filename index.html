@@ -82,16 +82,102 @@
                         <img src="img/shop-cart.png" alt="">
                     </div>
                 </div>
-                <button class="logaut"><p>Logout</p></button>
+                <button class="logaut">
+                    <p>Logout</p>
+                </button>
             </div>
             <div class="backgraund-header">
                 <div class="text-backgraund">
-                        <p>big King Eggs</p>
+                    <p>big King Eggs</p>
                 </div>
                 <img src="img/header-banner.png" alt="">
             </div>
         </header>
+        <div class="content">
+            <div class="item-photo">
+
+                <div class="content-photo" >
+                    <img class="slides" src="img/box.png" >
+                    <img class="slides" src="img/1.png" >
+                    <img class="slides" src="img/2.png" >
+                    <img class="slides" src="img/3.png">
+                    <img class="slides" src="img/4.png">
+                    <img class="slides" src="img/5.png">
+                    <img class="slides" src="img/6.png" >
+                    <img class="slides" src="img/7.png" >
+                    <img class="slides" src="img/8.png">
+                    <img class="slides" src="img/9.png" >
+                    <img class="slides" src="img/10.png" >
+                    <img class="slides" src="img/11.png" >
+                    <img class="slides" src="img/12.png">
+                </div>
+
+                <div class="button-content">
+                    <div class="section-button">
+                        <button class="button light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+                        <button class="button light-grey" onclick="plusDivs(1)">Next ❯</button>
+                    </div>
+                    <button class="button demo" onclick="currentDiv(1)"><img src="img/box-two.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(2)"><img src="img/1.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(3)"><img src="img/2.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(4)"><img src="img/3.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(5)"><img src="img/4.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(6)"><img src="img/5.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(7)"><img src="img/6.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(8)"><img src="img/7.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(9)"><img src="img/8.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(10)"><img src="img/9.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(11)"><img src="img/10.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(12)"><img src="img/11.png" alt=""></button>
+                    <button class="button demo" onclick="currentDiv(13)"><img src="img/12.png" alt=""></button>
+                </div>
+            </div>
+            <div class="item-info">
+                <p>Big King Egg 12pcs</p>
+                <p>Big King Egg© Choco+Toy 0.7oz/20g</p>
+                <span>$47.88</span>
+                <p>Free shipping</p>
+                <div class="price">
+                        <label>Quantity: <input type="text" value="1"></label>
+                        <button class="add">ADD TO CART</button>
+                </div>
+                <p>Because: Nuts Free, BPA Free, Vitamins</p>
+                <p>Chocolate (Sugar, Hydrogenated Vegetable Oil, Cocoa Powder, Whey Powder,Imported milk Powder,</br>
+                     Cocoa Syrup, Edible Essence(Chocolate Flavor and Milk Flavor), Granules ten. Biscuit (Wheat meal, Sugar,<br>
+                      Corn Starch, Cocoa Butter Substitute, Rice, Cocoa Powder, Whey Powder, Milk Powder, Edible Essence(<br>
+                      Chocolate Flavor and Milk Flavor), Salt). Allergen Statement: Contains Milk, Wheat. Manufactured on equip-<br>
+                      ment that also processes products containing Soy.</p>
+            </div>
+        </div>
     </div>
 </body>
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("slides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" red", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " red";
+    }
+</script>
 
 </html>
