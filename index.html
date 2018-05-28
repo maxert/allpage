@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="slick-theme.min.css" />
 
     <title>Document</title>
 </head>
@@ -183,40 +183,42 @@
                     <br> ment that also processes products containing Soy.</p>
             </div>
             <div class="photos">
-                <div class="text-photos">
-                    <p>KING BOX</p>
-                    <p>Share your photos and join the #lKING EGGS family </p>
-                </div>
-                <button class="add-photo">
-                    ADD YOUR PHOTO
-                </button>
-                <div class="slider-photo">
-                        <button class="slick-prev" aria-label="Previous" type="button"></button>
-                    <div class="center slider">
-                        <div>
-                            <img class="slides-photo" src="img/box.png">
-                        </div>
-                        <div>
-                            <img class="slides-photo" src="img/1.png">
-                        </div>
-                        <div>
-                            <img class="slides-photo" src="img/2.png">
-                        </div>
-                        <div>
-                            <img class="slides-photo" src="img/3.png">
-                        </div>
-                        <div>
-                            <img class="slides-photo" src="img/4.png">
-                        </div>
-                        <div>
-                            <img class="slides-photo" src="img/5.png">
-                        </div>
-
+                <div class="top-photo">
+                    <div class="text-photos">
+                        <p>KING BOX</p>
+                        <p>Share your photos and join the #lKING EGGS family </p>
                     </div>
-                    <button class="slick-next" aria-label="Next" type="button" ></button>
+                    <button class="add-photo">
+                        ADD YOUR PHOTO
+                    </button>
+                </div>
+                <div class="slider-photo">
+                    <div class="slider slider-nav">
+                        <div>
+                            <img id="slides-photo" src="img/photo-1.png">
+                        </div>
+                        <div>
+                            <img id="slides-photo" src="img/photo-2.png">
+                        </div>
+                        <div>
+                            <img id="slides-photo" src="img/photo-3.png">
+                        </div>
+                        <div>
+                            <img id="slides-photo" src="img/photo-4.png">
+                        </div>
+                        <div>
+                            <img id="slides-photo" src="img/photo-5.png">
+                        </div>
+                    </div>
 
                 </div>
-
+                <div class="item-text">
+                    <p>RELATED ITEM</p>
+                </div>
+                <div class="related-buy">
+                    <img src="img/magic.png" alt="">
+                    <img src="img/happyeggs.png" alt="">
+                </div>
             </div>
         </div>
     </div>
@@ -249,15 +251,37 @@
         dots[slideIndex - 1].className += " red";
     }
 </script>
-<script src="slick.min.js"></script>
-<script>    
-    $(".center").slick({
-        dots: true,
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+<script> 
+    $('.slider-nav').slick({
         infinite: true,
+        centerPadding: "0px",
+        speed: 300,
+        slidesToShow: 4,
         centerMode: true,
-        slidesToShow: 5,
-        slidesToScroll: 3
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
+    var elems = document.getElementsByClassName('slick-list draggable');
+    for (var i = 0; i < elems.length; i++)elems[i].style.margin = "0px 50px 0px 50px";
 </script>
 
 </html>

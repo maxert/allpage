@@ -210,69 +210,39 @@ a:focus {
   line-height: 1.667;
   text-align: left;
 }
-/*Карусель*/
-.carousel {
-  position: relative;
-  width: 398px;
-  padding: 10px 40px;
-  border: 1px solid #CCC;
-  border-radius: 15px;
-  background: #eee;
-}
-
-.carousel img {
-  width: 130px;
-  height: 130px;
-  /* по умолчанию inline, в ряде браузеров это даст лишнее пространство вокруг элементов */
-
-  display: block;
-}
-
-.arrow {
-  position: absolute;
-  top: 60px;
-  padding: 0;
-  background: #ddd;
-  border-radius: 15px;
-  border: 1px solid gray;
-  font-size: 24px;
-  line-height: 24px;
-  color: #444;
-  display: block;
-}
-
-.arrow:focus {
-  outline: none;
-}
-
-.arrow:hover {
-  background: #ccc;
-  cursor: pointer;
-}
-
-.prev {
-  left: 7px;
-}
-
-.next {
-  right: 7px;
-}
-
-.gallery {
-  width: 390px;
-  overflow: hidden;
-}
-
-.gallery ul {
-  height: 130px;
-  width: 9999px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  transition: margin-left 250ms;
-  font-size: 0;
-}
-
-.gallery li {
+.text-photos {
   display: inline-block;
+}
+.add-photo {
+  display: block;
+  float: right;
+  margin-top: 3%;
+}
+.top-photo {
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+/*Карусель*/
+
+/*RELATED ITEM*/
+.item-text {
+  text-align: center;
+  margin-top: 75px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: "Ubuntu";
+  color: rgb(33, 156, 193);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.related-buy>img
+{
+ display: inline-block;
+ margin-right: 40px;
+ margin-left: 40px;
+}
+.related-buy
+{
+  text-align: center;
+  margin-bottom: 130px;
 }
