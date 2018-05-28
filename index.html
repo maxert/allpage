@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="slick.min.css" />
     <link rel="stylesheet" type="text/css" href="slick-theme.min.css" />
 
     <title>Document</title>
@@ -102,6 +102,9 @@
             <div class="item-photo">
 
                 <div class="content-photo">
+                    <div>
+                        <img class="button light-grey" onclick="plusDivs(-1)" src="img/leftarrow-photo.png">
+                    </div>
                     <img class="slides" src="img/box.png">
                     <img class="slides" src="img/1.png">
                     <img class="slides" src="img/2.png">
@@ -115,13 +118,12 @@
                     <img class="slides" src="img/10.png">
                     <img class="slides" src="img/11.png">
                     <img class="slides" src="img/12.png">
+                    <div>
+                        <img class="button light-grey" onclick="plusDivs(1)" src="img/rightarrow-photo.png">
+                    </div>
                 </div>
 
                 <div class="button-content">
-                    <div class="section-button">
-                        <button class="button light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                        <button class="button light-grey" onclick="plusDivs(1)">Next ❯</button>
-                    </div>
                     <button class="button demo" onclick="currentDiv(1)">
                         <img src="img/box-two.png" alt="">
                     </button>
@@ -169,7 +171,8 @@
                 <span>$47.88</span>
                 <p>Free shipping</p>
                 <div class="price">
-                    <label>Quantity:
+                    <label>
+                        <span>Quantity:</span>
                         <input type="text" value="1">
                     </label>
                     <button class="add">ADD TO CART</button>
@@ -221,9 +224,59 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <div class="margin-footer">
+                <div class="footer-info">
+                    <div class="support">
+                        <p>SUPPORT</p>
+                        <hr>
+                        <p>Store Locator</p>
+                        <p>FAQ</p>
+                        <p>Contact Us</p>
+                        <p>Term of use</p>
+                        <p>Vendor Inquiry</p>
+                        <p>Customer Service</p>
+                    </div>
+                    <div class="aboutus">
+                        <p>ABOUT US</p>
+                        <hr>
+                        <p>Press</p>
+                        <p>Blog</p>
+                        <p>Privacy Policy</p>
+                        <p>Return Policy</p>
+                        <p>Shipping Rates</p>
+                    </div>
+                    <div class="connectwithus">
+                        <p>CONNECT WITH US</p>
+                        <hr>
+                        <div class="img-block">
+                            <img src="img/youtube-footer.png" alt="">
+                            <img src="img/facebook-footer.png" alt="">
+                            <img src="img/pinterest-footer.png" alt="">
+                            <img src="img/twitter-footer.png" alt="">
+                            <img src="img/ints-footer .png" alt="">
+                            <img src="img/google-footer.png" alt="">
+                            <img src="img/email-footer.png" alt="">
+                        </div>
+                        <p>Copyright© 2015 Sweets Choice
+                            <br> All rights reserved.Copying any part of this website without
+                            <br>written permission from the owner is a violation of federal law
+                            <br>and may result in criminal prosecution and civil liability</p>
+                    </div>
+                    <div class="getcoupons">
+                        <p>Get Coupons, New Product Releases & More</p>
+                        <div class="getcoupons-inp">
+                            <input type="text" placeholder="Enter your email address...">
+                            <button class="singup">SING UP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 <script>
+    //Индекс слайдов количесво
     var slideIndex = 1;
     showDivs(slideIndex);
 
@@ -237,31 +290,34 @@
 
     function showDivs(n) {
         var i;
+        //Находим елемент slides
         var x = document.getElementsByClassName("slides");
+        //Находим елемент demo
         var dots = document.getElementsByClassName("demo");
         if (n > x.length) { slideIndex = 1 }
         if (n < 1) { slideIndex = x.length }
         for (i = 0; i < x.length; i++) {
+            //скрыть блоки
             x[i].style.display = "none";
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" red", "");
         }
         x[slideIndex - 1].style.display = "block";
+        //добавление подстветки под слайдер
         dots[slideIndex - 1].className += " red";
     }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
 <script> 
+    /*Настройка карусели*/
     $('.slider-nav').slick({
-        infinite: true,
-        centerPadding: "0px",
         speed: 300,
         slidesToShow: 4,
         centerMode: true,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1600,
                 settings: {
                     arrows: false,
                     centerMode: true,
@@ -270,18 +326,62 @@
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 1200,
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
+                    centerPadding: '20px',
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 970,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '0px',
+                    slidesToShow: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    speed: 300,
+                    centerPadding: '0px',
+                    centerMode: true,
+                    slidesToShow: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000
                 }
             }
         ]
     });
-    var elems = document.getElementsByClassName('slick-list draggable');
+    //Добавление отсупов для карусели   
+    if (screen.width >= '560') {
+        var elems = document.getElementsByClassName('slick-list draggable');
     for (var i = 0; i < elems.length; i++)elems[i].style.margin = "0px 50px 0px 50px";
+}else if(screen.width <= '560')
+{
+    var elems = document.getElementsByClassName('slick-list draggable');
+    for (var i = 0; i < elems.length; i++)elems[i].style.margin = "0px 0px 0px 0px";
+}
+</script>
+<script>
+
+    var text = document.getElementsByTagName("input")[0];
+    //Преобразование в числа
+    var span_tag = document.getElementsByTagName("span")[0].innerHTML.replace(/[^.\d]+/g, "");
+    var span_num = parseFloat(span_tag);
+    var input = document.body.children[0];
+    //Расчёт суммы от ввода поля
+    input.oninput = function () {
+        var sum = text.value * span_num;
+        //Преобразование чтобы выводило через точку только 2 элемента не больше
+        document.getElementsByTagName("span")[0].innerHTML = "$" + sum.toFixed(2);
+    };
 </script>
 
 </html>
