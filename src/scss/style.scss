@@ -1468,8 +1468,8 @@ ul {
     }
 
     .bottom_container_pop_up button {
-        left: auto!important;
-        transform: none!important;
+        left: auto !important;
+        transform: none !important;
         margin-bottom: 5px;
     }
 
@@ -1491,10 +1491,14 @@ ul {
         flex-direction: column;
     }
 
+    .pop_up .close_button {
+        top: 5px;
+    }
+
     .authorization_pop_up .pop_up_center {
         overflow-y: scroll;
         height: 100vh;
-        padding-bottom: 60px!important;
+        padding-bottom: 60px !important;
         padding: 20px;
         overflow-x: hidden;
     }
@@ -1736,6 +1740,7 @@ ul {
 
 .slider_head_items {
     position: relative;
+    min-height: 453px;
 
     .container_right_head_text {
         position: absolute;
