@@ -605,11 +605,15 @@
     .container_catalog_all_filter {
         overflow-y: scroll;
         height: 100vh;
-        padding-bottom: 160px;
+        padding-bottom: 0px;;
     }
 
     .container_catalog_all_items_product {
         grid-gap: 20px;
+    }
+
+    .filter {
+        padding-bottom: 100px;
     }
 
     .button_delete {
@@ -627,11 +631,10 @@
         }
 
         background: #fff;
-        position: absolute;
-        width: 100%;
+        position: relative;
+        width:max-content;
 
-        left: 50%;
-        transform: translate(-50%, 0%);
+        left: -20px;
     }
 
     .filters_select {
@@ -660,9 +663,7 @@
 }
 
 @media screen and (max-width:767px) {
-    .button_delete {
-        left: 51%;
-    }
+
 
     .container_catalog_all_items_product {
         grid-template-columns: 1fr;
@@ -675,9 +676,7 @@
         max-width: 320px;
     }
 
-    .container_catalog_all_filter {
-        padding-bottom: 145px;
-    }
+   
 
     .pagination_list {
         grid-column-gap: 3px;

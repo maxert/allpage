@@ -1458,8 +1458,12 @@ ul {
 
 
 @media screen and (max-width: 767px) {
+    .text_head_all {
+        line-height: 24px;
+    }
+
     .skills_table .skills_row {
-        padding: 12px 10px;
+        padding: 12px 10px !important;
     }
 
     .pop_up_row {
@@ -1614,6 +1618,7 @@ ul {
 
 .slider_head {
     min-height: 453px;
+
     &.slick-dotted.slick-slider {
         margin: 0px;
     }
