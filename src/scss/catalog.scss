@@ -605,7 +605,8 @@
     .container_catalog_all_filter {
         overflow-y: scroll;
         height: 100vh;
-        padding-bottom: 0px;;
+        padding-bottom: 0px;
+        ;
     }
 
     .container_catalog_all_items_product {
@@ -618,7 +619,7 @@
 
     .button_delete {
         label {
-            margin-left: 16px;
+            margin-left: 9px;
         }
 
         padding: 0px;
@@ -630,11 +631,12 @@
             padding: 0px;
         }
 
+        left: 50%;
+        transform: translate(-50%, 0%);
         background: #fff;
         position: relative;
-        width:max-content;
+        width:320px;
 
-        left: -20px;
     }
 
     .filters_select {
@@ -676,7 +678,7 @@
         max-width: 320px;
     }
 
-   
+
 
     .pagination_list {
         grid-column-gap: 3px;
