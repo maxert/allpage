@@ -10,6 +10,14 @@ function resizeheight() {
     }
   });
 }
+if (document.querySelectorAll(".header_top_right_come")[0]) {
+  document.querySelectorAll(".header_top_right_come")[0].addEventListener('click',()=>{
+    document.querySelectorAll(".come_pop_up")[0].classList.add("active");
+  }) 
+  document.querySelectorAll(".header_top_right_come")[1].addEventListener('click',()=>{
+    document.querySelectorAll(".come_pop_up")[0].classList.add("active");
+  }) 
+}
 if (document.querySelectorAll(".container_checkout_select_head")[0]) {
   document.querySelectorAll(".container_checkout_select_head")[0].onclick = () => {
     if (document.querySelectorAll(".container_checkout_select_head")[0].classList.contains("active")) {
@@ -32,11 +40,7 @@ if (document.querySelectorAll(".container_checkout_center_tabs_account_text span
     document.querySelectorAll(".come_pop_up")[0].classList.add("active");
   };
 }
-if (document.querySelectorAll(".header_top_right_come")[0]) {
-  document.querySelectorAll(".header_top_right_come")[0].onclick = () => {
-    document.querySelectorAll(".come_pop_up")[0].classList.add("active");
-  };
-}
+
 if (document.querySelectorAll(".header_top_right_come .pop_up_text_head span")[0]) {
   document.querySelectorAll(".header_top_right_come .pop_up_text_head span")[0].onclick = () => {
     document.querySelectorAll(".authorization_pop_up")[0].classList.add("active");
