@@ -1458,6 +1458,10 @@ ul {
 
 
 @media screen and (max-width: 767px) {
+    .skills_table .skills_row {
+        padding: 12px 10px;
+    }
+
     .pop_up_row {
         grid-template-columns: 1fr;
 
@@ -1609,6 +1613,7 @@ ul {
 }
 
 .slider_head {
+    min-height: 453px;
     &.slick-dotted.slick-slider {
         margin: 0px;
     }
@@ -2203,6 +2208,10 @@ ul {
 
 
 @media screen and (max-width:1200px) {
+    .fixed_header.fixed {
+        display: none;
+    }
+
     .mob_header .header_bottom {
         padding-bottom: 100px;
     }

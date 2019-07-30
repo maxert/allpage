@@ -186,19 +186,21 @@ if (window.innerWidth <= 1200) {
   }
 }
 if (window.innerWidth >= 1200) {
-  function scrolladd() {
-    var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    var heightScroll = document.querySelectorAll("header")[0].clientHeight;
-    if (scrolled > heightScroll) {
-      document.querySelectorAll(".fixed_header")[0].classList.add("fixed");
-    } else {
-      document.querySelectorAll(".fixed_header")[0].classList.remove("fixed");
+  if (document.querySelectorAll(".fixed_header")[0]) {
+    function scrolladd() {
+      var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+      var heightScroll = document.querySelectorAll("header")[0].clientHeight;
+      if (scrolled > heightScroll) {
+        document.querySelectorAll(".fixed_header")[0].classList.add("fixed");
+      } else {
+        document.querySelectorAll(".fixed_header")[0].classList.remove("fixed");
+      }
     }
-  }
-  window.onscroll = () => {
+    window.onscroll = () => {
+      scrolladd();
+    };
     scrolladd();
-  };
-  scrolladd();
+  }
 }
 
 if (document.querySelectorAll(".container_tabs_items_list select")[0]) {
@@ -312,24 +314,26 @@ if (document.querySelectorAll(".container_catalog_all_items_right .dropdown butt
 }
 
 var slider = document.querySelectorAll(".rangeslider")[0];
-var newslide = new noUiSlider.create(slider, {
-  start: [5000, 30000],
-  connect: true,
-  range: {
-    min: 0,
-    max: 35000,
-  },
-});
-var nodes = [
-  document.querySelectorAll(".range_inputs>div>input")[0], // 0
-  document.querySelectorAll(".range_inputs>div>input")[1],
-];
-slider.noUiSlider.on("update", function(values, handle, unencoded, isTap, positions) {
-  nodes[handle].value = Number(values[handle]).toFixed();
-});
-document.querySelectorAll(".ranrange_inputs_button")[0].addEventListener("change", function() {
-  slider.noUiSlider.set([null, this.value]);
-});
+if (slider) {
+  var newslide = new noUiSlider.create(slider, {
+    start: [5000, 30000],
+    connect: true,
+    range: {
+      min: 0,
+      max: 35000,
+    },
+  });
+  var nodes = [
+    document.querySelectorAll(".range_inputs>div>input")[0], // 0
+    document.querySelectorAll(".range_inputs>div>input")[1],
+  ];
+  slider.noUiSlider.on("update", function(values, handle, unencoded, isTap, positions) {
+    nodes[handle].value = Number(values[handle]).toFixed();
+  });
+  document.querySelectorAll(".ranrange_inputs_button")[0].addEventListener("change", function() {
+    slider.noUiSlider.set([null, this.value]);
+  });
+}
 if (window.innerWidth >= 1200) {
   if (document.querySelectorAll(".checkbox_container_all .custom-checkbox")[0]) {
     document.querySelectorAll(".checkbox_container_all .custom-checkbox").forEach(Element => {
