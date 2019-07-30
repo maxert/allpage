@@ -514,8 +514,11 @@ footer {
         }
     }
 }
-.container_besseller{
-    overflow: hidden;}
+
+.container_besseller {
+    overflow: hidden;
+}
+
 .header_top_right_come {
     cursor: pointer;
 }
@@ -1359,8 +1362,9 @@ ul {
 
 @media screen and (max-width: 1200px) {
     .footer_all .footer_text_timework br {
-        display: block!important;
+        display: block !important;
     }
+
     .container_besseller_items>div {
         margin-bottom: 100px;
     }
@@ -1452,11 +1456,26 @@ ul {
 }
 
 @media screen and (max-width: 767px) {
-    .footer_all .container_checkout_center{
-        max-width: 280px!important;}
-    .footer_all .footer_text_timework br {
-        display: none!important;
+    .pop_up_row {
+        grid-template-columns: 1fr;
+
     }
+
+    .authorization_pop_up .pop_up_center {
+        overflow-y: scroll;
+        height: 100vh;
+        padding-bottom: 40px;
+        overflow-x: hidden;
+    }
+
+    .footer_all .container_checkout_center {
+        max-width: 280px !important;
+    }
+
+    .footer_all .footer_text_timework br {
+        display: none !important;
+    }
+
     .phone_right {
         >a {
             display: none;
@@ -2148,10 +2167,13 @@ ul {
 
 
 @media screen and (max-width:1200px) {
+    .mob_header .header_bottom{
+        padding-bottom: 100px;}
     .footer_all .footer_text_timework {
         grid-row: auto;
         grid-column: auto;
     }
+
     .slider_head .slick-next {
         right: 10px;
     }
@@ -2168,7 +2190,7 @@ ul {
 
     header {
         position: fixed;
-        width: 100vw;
+        width: 100%;
         top: 0;
         z-index: 99;
         box-shadow: 2px 4px 15px rgba(49, 49, 49, 0.2);
@@ -2491,10 +2513,11 @@ ul {
 
 @media screen and (max-width:767px) {
     .container_tabs_items_list {
-    .form-group {
-        display: block;
+        .form-group {
+            display: block;
+        }
     }
-}
+
     .mob_header .header_bottom_list {
         grid-template-columns: 1fr !important;
     }
@@ -2698,7 +2721,7 @@ ul {
         padding: 0px !important;
     }
 
-    
+
 
     .container_feadback_content {
         grid-template-columns: 1fr !important;

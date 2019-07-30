@@ -566,11 +566,10 @@ textarea.form-control {
         grid-row-gap: 20px;
     }
 
-    .mob_header {
-        max-height: 300px;
-    }
+ 
 
     .mob_header {
+        height: 100vh;
         overflow-y: scroll;
         overflow-x: hidden;
     }

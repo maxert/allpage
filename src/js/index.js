@@ -27,7 +27,7 @@ document.querySelectorAll(".close_button").forEach(Element => {
     Element.parentNode.parentNode.classList.remove("active");
   };
 });
-if (document.querySelectorAll(".container_checkout_center_tabs_account_text .span")[0]) {
+if (document.querySelectorAll(".container_checkout_center_tabs_account_text span")[0]) {
   document.querySelectorAll(".container_checkout_center_tabs_account_text span")[0].onclick = () => {
     document.querySelectorAll(".come_pop_up")[0].classList.add("active");
   };
@@ -147,17 +147,19 @@ document.querySelectorAll(".container_tabs_items_list ul li").forEach((Element, 
     Element.classList.add("active");
   };
 });
-document.querySelectorAll(".burger_menu")[0].onclick = () => {
-  if (document.querySelectorAll(".burger_menu")[0].children[0].classList.contains("active")) {
-    document.querySelectorAll(".burger_menu")[0].children[0].classList.remove("active");
-    document.querySelectorAll(".burger_menu")[0].children[1].classList.add("active");
-    document.querySelectorAll(".mob_header")[0].classList.add("active");
-  } else {
-    document.querySelectorAll(".mob_header")[0].classList.remove("active");
-    document.querySelectorAll(".burger_menu")[0].children[0].classList.add("active");
-    document.querySelectorAll(".burger_menu")[0].children[1].classList.remove("active");
-  }
-};
+if (document.querySelectorAll(".burger_menu")[0]) {
+  document.querySelectorAll(".burger_menu")[0].onclick = () => {
+    if (document.querySelectorAll(".burger_menu")[0].children[0].classList.contains("active")) {
+      document.querySelectorAll(".burger_menu")[0].children[0].classList.remove("active");
+      document.querySelectorAll(".burger_menu")[0].children[1].classList.add("active");
+      document.querySelectorAll(".mob_header")[0].classList.add("active");
+    } else {
+      document.querySelectorAll(".mob_header")[0].classList.remove("active");
+      document.querySelectorAll(".burger_menu")[0].children[0].classList.add("active");
+      document.querySelectorAll(".burger_menu")[0].children[1].classList.remove("active");
+    }
+  };
+}
 if (window.innerWidth <= 1200) {
   if (document.querySelectorAll(".container_list_items")[0]) {
     document.querySelectorAll(".container_list_items")[0].appendChild(document.querySelectorAll(".container_right_head")[0]);
