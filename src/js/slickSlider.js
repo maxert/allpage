@@ -1,4 +1,4 @@
-window.onload = () => {
+
   if (document.querySelectorAll(".slider_head")[0]) {
     $(".slider_head").slick({
       dots: true,
@@ -40,4 +40,4 @@ window.onload = () => {
       ],
     });
   }
-};
+
