@@ -7,11 +7,11 @@ window.onload=()=>{
       document.querySelectorAll(".mob_header")[0].classList.remove("active");
       $(".burger_menu").removeClass("active");
       if(window.innerWidth<=767){
-        document.body.classList.add("hiadden");
+        document.body.classList.remove("hiadden");
       }
     } else {
       if(window.innerWidth<=767){
-        document.body.classList.remove("hiadden");
+        document.body.classList.add("hiadden");
       }
       document.querySelectorAll(".mob_header")[0].classList.add("active");
       $(".burger_menu").addClass("active");
