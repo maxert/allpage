@@ -1,5 +1,24 @@
 "use strict";
 import slick from "./slickSlider";
+
+window.onload=()=>{
+  $(".burger_menu").click(()=>{
+    if (document.querySelectorAll(".burger_menu")[0].classList.contains("active")) {
+      document.querySelectorAll(".mob_header")[0].classList.remove("active");
+      $(".burger_menu").removeClass("active");
+      if(window.innerWidth<=767){
+        document.body.classList.add("hiadden");
+      }
+    } else {
+      if(window.innerWidth<=767){
+        document.body.classList.remove("hiadden");
+      }
+      document.querySelectorAll(".mob_header")[0].classList.add("active");
+      $(".burger_menu").addClass("active");
+    }
+  })
+}
+
 function resizeheight() {
   document.querySelectorAll(".container_checkout_select_content>div:nth-child(n+2)>div:nth-child(n+3):nth-child(-n+6)").forEach((Element, i) => {
     var test = Element;
@@ -13,9 +32,11 @@ function resizeheight() {
 if (document.querySelectorAll(".header_top_right_come")[0]) {
   document.querySelectorAll(".header_top_right_come")[0].addEventListener('click',()=>{
     document.querySelectorAll(".come_pop_up")[0].classList.add("active");
+    document.body.classList.add("hiadden");
   }) 
   document.querySelectorAll(".header_top_right_come")[1].addEventListener('click',()=>{
     document.querySelectorAll(".come_pop_up")[0].classList.add("active");
+    document.body.classList.add("hiadden");
   }) 
 }
 if (document.querySelectorAll(".container_checkout_select_head")[0]) {
@@ -23,6 +44,7 @@ if (document.querySelectorAll(".container_checkout_select_head")[0]) {
     if (document.querySelectorAll(".container_checkout_select_head")[0].classList.contains("active")) {
       document.querySelectorAll(".container_checkout_select_head")[0].classList.remove("active");
       document.querySelectorAll(".container_checkout_select_content")[0].classList.remove("active");
+      
     } else {
       document.querySelectorAll(".container_checkout_select_head")[0].classList.add("active");
       document.querySelectorAll(".container_checkout_select_content")[0].classList.add("active");
@@ -33,28 +55,33 @@ if (document.querySelectorAll(".container_checkout_select_head")[0]) {
 document.querySelectorAll(".close_button").forEach(Element => {
   Element.onclick = () => {
     Element.parentNode.parentNode.classList.remove("active");
+    document.body.classList.remove("hiadden");
   };
 });
 if (document.querySelectorAll(".container_checkout_center_tabs_account_text span")[0]) {
   document.querySelectorAll(".container_checkout_center_tabs_account_text span")[0].onclick = () => {
     document.querySelectorAll(".come_pop_up")[0].classList.add("active");
+    document.body.classList.add("hiadden");
   };
 }
 
 if (document.querySelectorAll(".header_top_right_come .pop_up_text_head span")[0]) {
   document.querySelectorAll(".header_top_right_come .pop_up_text_head span")[0].onclick = () => {
     document.querySelectorAll(".authorization_pop_up")[0].classList.add("active");
+    document.body.classList.add("hiadden");
     document.querySelectorAll(".come_pop_up")[0].classList.remove("active");
   };
 }
 
 document.querySelectorAll(".come_pop_up .pop_up_text_head span")[0].onclick = () => {
   document.querySelectorAll(".authorization_pop_up")[0].classList.add("active");
+  document.body.classList.add("hiadden");
   document.querySelectorAll(".come_pop_up")[0].classList.remove("active");
 };
 
 document.querySelectorAll(".come_pop_up .bottom_container_pop_up span")[0].onclick = () => {
   document.querySelectorAll(".password_pop_up")[0].classList.add("active");
+  document.body.classList.add("hiadden");
   document.querySelectorAll(".come_pop_up")[0].classList.remove("active");
 };
 
@@ -151,19 +178,7 @@ document.querySelectorAll(".container_tabs_items_list ul li").forEach((Element, 
     Element.classList.add("active");
   };
 });
-if (document.querySelectorAll(".burger_menu")[0]) {
-  document.querySelectorAll(".burger_menu")[0].onclick = () => {
-    if (document.querySelectorAll(".burger_menu")[0].children[0].classList.contains("active")) {
-      document.querySelectorAll(".burger_menu")[0].children[0].classList.remove("active");
-      document.querySelectorAll(".burger_menu")[0].children[1].classList.add("active");
-      document.querySelectorAll(".mob_header")[0].classList.add("active");
-    } else {
-      document.querySelectorAll(".mob_header")[0].classList.remove("active");
-      document.querySelectorAll(".burger_menu")[0].children[0].classList.add("active");
-      document.querySelectorAll(".burger_menu")[0].children[1].classList.remove("active");
-    }
-  };
-}
+
 if (window.innerWidth <= 1200) {
   if (document.querySelectorAll(".container_list_items")[0]) {
     document.querySelectorAll(".container_list_items")[0].appendChild(document.querySelectorAll(".container_right_head")[0]);
@@ -358,15 +373,18 @@ if (window.innerWidth >= 1200) {
 }
 if (document.querySelectorAll(".filter_click")[0]) {
   document.querySelectorAll(".filter_click")[0].onclick = () => {
+    document.body.classList.add("hiadden");
     document.querySelectorAll(".container_catalog_all_filter")[0].classList.add("active");
     document.querySelectorAll(".backgraund_wrapper")[0].classList.add("active");
   };
 
   document.querySelectorAll(".filter_text img")[0].onclick = () => {
+    document.body.classList.remove("hiadden");
     document.querySelectorAll(".container_catalog_all_filter")[0].classList.remove("active");
     document.querySelectorAll(".backgraund_wrapper")[0].classList.remove("active");
   };
   document.querySelectorAll(".backgraund_wrapper")[0].onclick = () => {
+    document.body.classList.remove("hiadden");
     document.querySelectorAll(".container_catalog_all_filter")[0].classList.remove("active");
     document.querySelectorAll(".backgraund_wrapper")[0].classList.remove("active");
   };

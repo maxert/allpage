@@ -1109,16 +1109,27 @@ ul {
     grid-template-columns: repeat(4, 1fr);
 
     .burger_menu {
+        cursor: pointer;
         display: none;
         width: 30px;
         height: 30px;
 
-        img {
-            display: none;
-
-            &.active {
-                display: block;
+        &.active {
+            >img:nth-child(1) {
+                display: none!important;
             }
+
+            >img:nth-child(2) {
+                display: block ;
+            }
+        }
+
+        >img:nth-child(2) {
+            display: none;
+        }
+
+        img {
+            display: block;
         }
     }
 
@@ -2218,7 +2229,7 @@ ul {
     }
 
     .mob_header .header_bottom {
-        padding-bottom: 100px;
+        padding-bottom: 130px;
     }
 
     .footer_all .footer_text_timework {
@@ -2235,6 +2246,10 @@ ul {
     }
 
     body {
+        &.hiadden {
+            overflow: hidden
+        }
+
         >.container_new {
             margin-top: 100px;
         }
