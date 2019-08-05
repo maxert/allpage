@@ -112,10 +112,7 @@ const config = {
     //   "process.env.NODE_ENV": JSON.stringify("production"),
     // }),
     new CopyWebpackPlugin([
-      {
-        from: "./src/fonts",
-        to: "./fonts",
-      },
+
       {
         from: "./src/favicon",
         to: "./favicon",

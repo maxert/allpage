@@ -389,3 +389,8 @@ if (document.querySelectorAll(".filter_click")[0]) {
     document.querySelectorAll(".backgraund_wrapper")[0].classList.remove("active");
   };
 }
+document.querySelectorAll(".authorization_pop_up .pop_up_text_all span")[0].onclick=()=>{
+  document.querySelectorAll(".come_pop_up")[0].classList.add("active");
+  document.querySelectorAll(".authorization_pop_up ")[0].classList.remove("active");
+  document.body.classList.add("hiadden");
+}
