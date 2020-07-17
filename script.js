@@ -71,15 +71,6 @@ window.onload = () => {
                             slidesToShow: 1
                         }
                     },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 1
-                        }
-                    }
                 ]
             });
         }
@@ -103,7 +94,11 @@ window.onload = () => {
         slidesToShow: 1,
         adaptiveHeight: true
     });
-
+    $('.slider_news .slider_wrapper').slick({
+        slidesToShow: 1,
+        dots: false,
+        arrows: false
+    });
     $('#context .menu .item')
         .tab({
             // special keyword works same as above
