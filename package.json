@@ -1,7 +1,4 @@
 {
-  "scripts": {
-    "start": "node public/server.js"
-  },
   "name": "expressapp",
   "version": "1.0.0",
   "dependencies": {
