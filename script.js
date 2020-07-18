@@ -1,4 +1,6 @@
 window.onload = () => {
+
+
     $('img.img-svg').each(function () {
         var $img = $(this);
         var imgClass = $img.attr('class');
@@ -43,10 +45,22 @@ window.onload = () => {
             }
         })
     }
+
+
     if (window.innerWidth <= 767) {
         if (document.querySelectorAll(".footer_bottom")[0]) {
             document.querySelectorAll(".footer_bottom")[0].appendChild(document.querySelectorAll("footer .menu_list")[0]);
         }
+        document.querySelectorAll("#party .ui.secondary.menu .item").forEach(element => {
+            if (element.classList.contains("active")) {
+                $('.party_select_mob .news_dropdown')
+                    .dropdown('set selected', element.dataset.tab)
+                ;
+                debugger
+            }
+        })
+
+
     }
     if (window.innerWidth <= 1230) {
         if (document.querySelectorAll(".container_lead_l")[0]) {
@@ -96,13 +110,33 @@ window.onload = () => {
     });
     $('.slider_news .slider_wrapper').slick({
         slidesToShow: 1,
-        dots: false,
-        arrows: false
+        prevArrow: ".button_left",
+        nextArrow: ".button_right",
+        dots: false
     });
+    if (document.querySelectorAll(".number_end")[0]) {
+        document.querySelectorAll(".number_end")[0].textContent = $(".slider_news .slider_wrapper").slick("getSlick").slideCount;
+    }
+    $('.slider_news .slider_wrapper').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        document.querySelectorAll(".number_start")[0].textContent = ((currentSlide ? currentSlide : 0) + 1);
+    });
+
+    $('#party .menu .item').tab({
+        context: 'parent'
+    });
+
     $('#context .menu .item')
         .tab({
             // special keyword works same as above
             context: 'parent'
+        })
+    ;
+
+    $('.party_select_mob select.dropdown')
+        .dropdown({
+            onChange: function (value, text, $selectedItem) {
+                $.tab('change tab', value);
+            }
         })
     ;
 
