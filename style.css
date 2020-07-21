@@ -4309,3 +4309,34 @@ a {
 }
 
 /*Result css end */
+
+/*Question css start*/
+.question_grid{
+    display: grid;
+    grid-gap: 120px;
+}
+.question_grid_row{
+    display: grid;
+    grid-template-columns: minmax(0, 416px) 1fr;
+    grid-gap: 40px;
+}
+.question_grid_row_l{
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+}
+.question_grid_row_r a{
+    display: flex;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+}
+.question_grid_row_r{
+    column-count: 2;
+    column-gap: 100px;
+    padding: 100px;
+    box-shadow: 4px 4px 24px rgba(11, 15, 48, 0.12);
+    border-radius: 16px;
+    background: #FFFFFF;
+}
