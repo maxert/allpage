@@ -1,3 +1,5 @@
+"use strict"
+
 window.onload = () => {
 
 
@@ -120,17 +122,19 @@ window.onload = () => {
     $('.slider_news .slider_wrapper').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
         document.querySelectorAll(".number_start")[0].textContent = ((currentSlide ? currentSlide : 0) + 1);
     });
-
+    $('.checkbox_interview .ui.checkbox').checkbox();
     $('#party .menu .item').tab({
         context: 'parent'
     });
-
     $('#context .menu .item')
         .tab({
             // special keyword works same as above
             context: 'parent'
         })
     ;
+    // document.querySelectorAll(".button_click")[0].onclick = () => {
+    //     $.tab('change tab', "2");
+    // }
 
     $('.party_select_mob select.dropdown')
         .dropdown({
@@ -164,5 +168,40 @@ window.onload = () => {
             })
         })
     ;
+    if (document.querySelectorAll(".number_list_end")[0]) {
+        let max_length = document.querySelectorAll("#interview>div").length;
+
+        let count = 1;
+        let one_count = 100 / max_length;
+        document.querySelectorAll(".number_list_end")[0].textContent = max_length;
+        document.querySelectorAll(".width_ellipse")[0].style.width = one_count + "%";
+        document.querySelectorAll(".button_interview_next")[0].onclick = () => {
+
+            if (count < max_length) {
+                one_count += 100 / max_length;
+                count++;
+                document.querySelectorAll(".width_ellipse")[0].style.width = one_count + "%";
+                document.querySelectorAll(".number_list_start")[0].textContent = count;
+                $.tab('change tab', count);
+            }
+        }
+        document.querySelectorAll(".button_interview_prev")[0].onclick = () => {
+
+            if (count > 1) {
+                one_count -= 100 / max_length;
+                count--;
+                document.querySelectorAll(".width_ellipse")[0].style.width = one_count + "%";
+                document.querySelectorAll(".number_list_start")[0].textContent = count;
+                $.tab('change tab', count);
+            }
+        }
+    }
+    if (document.querySelectorAll(".result_line_number")[0]) {
+        document.querySelectorAll(".result_line_number").forEach(element => {
+            if (parseInt(element.textContent) <= 100) {
+                element.parentElement.querySelectorAll(".result_line>div")[0].style.width = element.textContent;
+            }
+        })
+    }
 
 }
