@@ -4288,20 +4288,24 @@ a {
         grid-template-columns: 1fr 48px;
     }
 }
-@media screen and (max-width: 1230px){
-    .result_items_text_b{
+
+@media screen and (max-width: 1230px) {
+    .result_items_text_b {
         margin-bottom: 8px;
     }
 }
-@media screen and  (max-width: 767px){
-    .result_items{
+
+@media screen and  (max-width: 767px) {
+    .result_items {
         padding: 24px;
     }
+
     .result_row {
         grid-gap: 4px;
         grid-template-columns: 1fr 40px;
     }
-    .result_items_text_b{
+
+    .result_items_text_b {
         font-size: 14px;
         line-height: 16px;
         margin-bottom: 12px;
@@ -4311,28 +4315,32 @@ a {
 /*Result css end */
 
 /*Question css start*/
-.question_grid{
+.question_grid {
     display: grid;
     grid-gap: 120px;
 }
-.question_grid_row{
+
+.question_grid_row {
     display: grid;
     grid-template-columns: minmax(0, 416px) 1fr;
     grid-gap: 40px;
 }
-.question_grid_row_l{
+
+.question_grid_row_l {
     font-weight: bold;
     font-size: 36px;
     line-height: 42px;
 }
-.question_grid_row_r a{
+
+.question_grid_row_r a {
     display: flex;
     margin-bottom: 40px;
     font-weight: bold;
     font-size: 20px;
     line-height: 24px;
 }
-.question_grid_row_r{
+
+.question_grid_row_r {
     column-count: 2;
     column-gap: 100px;
     padding: 100px;
@@ -4340,56 +4348,306 @@ a {
     border-radius: 16px;
     background: #FFFFFF;
 }
-.question_grid_row_r a:last-child{
-    margin-bottom: 0px;
+
+.question_grid_row_r a:last-child {
+    margin-bottom: 0;
 }
+
 @media screen and (max-width: 1730px) {
-    .question_grid_row{
+    .question_grid_row {
         grid-gap: 80px;
     }
-    .question_grid_row_l{
+
+    .question_grid_row_l {
         font-size: 32px;
         line-height: 40px;
     }
-    .question_grid_row_r{
+
+    .question_grid_row_r {
         padding: 60px;
         column-gap: 60px;
     }
-    .question_grid_row_r a{
+
+    .question_grid_row_r a {
         font-size: 16px;
         line-height: 20px;
     }
-    .question_grid{
+
+    .question_grid {
         grid-gap: 100px;
     }
 }
+
 @media screen and (max-width: 1230px) {
-    .question_grid{
+    .question_grid {
         grid-gap: 60px;
     }
-    .question_grid_row{
+
+    .question_grid_row {
         grid-template-columns: 1fr;
         grid-gap: 24px;
     }
-    .question_grid_row_r{
+
+    .question_grid_row_r {
         column-count: auto;
     }
 }
+
 @media screen and (max-width: 767px) {
-    .question_grid_row_r{
+    .question_grid_row_r {
         padding: 24px;
     }
-    .question_grid_row_l{
+
+    .question_grid_row_l {
         font-size: 24px;
         line-height: 28px;
     }
+
     .question_grid {
         grid-gap: 40px;
     }
-    .question_grid_row_r a{
+
+    .question_grid_row_r a {
         font-size: 14px;
         line-height: 18px;
         margin-bottom: 24px;
     }
 }
+
 /*Question css end*/
+/*Question_page css start*/
+.question_page_r {
+    height: max-content;
+}
+
+.size_page {
+    max-width: 100%;
+}
+
+/*Question_page css end*/
+/*Face css start*/
+.face_top {
+    display: grid;
+    grid-template-columns: 606px 1fr;
+    grid-column-gap: 160px;
+}
+
+.face_top img {
+    width: 100%;
+    height: auto;
+}
+
+.face_bottom {
+    position: relative;
+    height: 540px;
+}
+
+.face_bottom:before {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 100%;
+    max-height: 540px;
+    background: var(--cgray);
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: -1;
+}
+
+.committee_content {
+    padding: 24px 40px 40px 40px;
+}
+
+.committee_content_title {
+    margin-bottom: 24px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.committee_content p {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.committee_grid_item {
+    background: #FFFFFF;
+    box-shadow: 4px 4px 24px rgba(11, 15, 48, 0.12);
+    border-radius: 16px;
+}
+
+.committee_text {
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 56px;
+    margin-bottom: 100px;
+}
+
+.committee_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 60px;
+}
+
+.committee {
+    margin-top: 200px;
+}
+
+.face_right_bottom {
+    max-width: 100%;
+}
+
+.face_bottom {
+    position: relative;
+    display: grid;
+    grid-gap: 160px;
+    align-items: center;
+    grid-template-columns: minmax(0, 606px) 1fr;
+    height: 480px;
+}
+
+.face_right_top_text_s {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    color: #464849;
+}
+
+.committee_img {
+    display: flex;
+    align-items: center;
+}
+
+.committee_img img {
+    width: 100%;
+    height: auto;
+}
+
+.face_right_img img {
+    width: 100%;
+    height: auto;
+}
+
+.face_right_img {
+    display: flex;
+    align-items: flex-end;
+    height: 480px;
+}
+
+.face_right_top_text_b {
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 56px;
+}
+
+.face_grid {
+    display: grid;
+    position: relative;
+    max-width: calc(100vw - 320px);
+    grid-gap: 80px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+@media screen and (max-width: 1730px) {
+    .committee_grid {
+        grid-gap: 40px;
+    }
+
+    .news_page_l_content_size p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .committee_text {
+        margin-bottom: 60px;
+        font-size: 48px;
+        line-height: 48px;
+    }
+
+    .committee {
+        margin-top: 140px;
+    }
+
+    .committee_content_title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 16px;
+    }
+
+    .committee_content {
+        padding: 16px 20px 20px 20px;
+    }
+
+    .face_grid {
+        padding-top: 100px;
+        grid-gap: 40px;
+        max-width: calc(100vw - 200px);
+    }
+
+    .face_right_top_text_b {
+        font-size: 48px;
+        line-height: 48px;
+    }
+
+    .face_right_top_text_s {
+        margin-bottom: 16px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .face_bottom,
+    .face_top {
+        display: grid;
+        grid-template-columns: 441px 1fr;
+        grid-column-gap: 80px;
+    }
+
+    .consignment_page_b {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .face_right_img,
+    .face_bottom {
+        height: 365px;
+    }
+
+}
+
+@media screen and (max-width: 1230px) {
+    .face_bottom {
+        grid-gap: 41px;
+        grid-template-columns: minmax(0, 305px) 1fr;
+    }
+
+    .face_top {
+
+        grid-template-columns: 1fr;
+    }
+    
+
+    .face_right_img, .face_bottom{
+        height: 420px;
+    }
+
+    .face_right_bottom p {
+        font-size: 14px;
+        line-height: 22px
+    }
+
+    .face_right_bottom {
+        padding: 37px 0;
+
+    }
+
+    .face_grid {
+        max-width: 100%;
+    }
+}
+
+/*Face css end*/
