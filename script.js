@@ -206,59 +206,58 @@ window.onload = () => {
 
 
 }
-if( new google.maps) {
-    var locations = [
-        ['Харьков', 49.988358, 36.232845, 11],
-        ['Чугуїв', 49.8358800, 36.6880300, 5],
-        ['Змійов', 49.6745300, 36.3477500, 5],
-        ['Васіщево', 49.8285200, 36.3269100, 5],
-        ['пос. Южний', 50.0547, 35.9627, 1],
-        ['Дергачі', 50.1065900, 36.1211200, 11],
-        ['Вовчанськ', 50.2907800, 36.9410800, 5],
-        ['Великий Бурлук', 50.0617000, 37.3837300, 3],
-        ['П’ятигорськ', 49.440092, 36.613969, 2],
-        ['пос.Малинівка', 49.8166700, 36.7333300, 1],
-        ['Мерефа', 49.823020, 36.0506900, 2],
-        ['Каменецький', 49.1509664, 37.0217689, 2]
-    ];
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
-        center: new google.maps.LatLng(49.988358, 36.232845, 60),
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        image: "./img/location_marker.svg"
+var locations = [
+    ['Харьков', 49.988358, 36.232845, 11],
+    ['Чугуїв', 49.8358800, 36.6880300, 5],
+    ['Змійов', 49.6745300, 36.3477500, 5],
+    ['Васіщево', 49.8285200, 36.3269100, 5],
+    ['пос. Южний', 50.0547, 35.9627, 1],
+    ['Дергачі', 50.1065900, 36.1211200, 11],
+    ['Вовчанськ', 50.2907800, 36.9410800, 5],
+    ['Великий Бурлук', 50.0617000, 37.3837300, 3],
+    ['П’ятигорськ', 49.440092, 36.613969, 2],
+    ['пос.Малинівка', 49.8166700, 36.7333300, 1],
+    ['Мерефа', 49.823020, 36.0506900, 2],
+    ['Каменецький', 49.1509664, 37.0217689, 2]
+];
+
+var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: new google.maps.LatLng(49.988358, 36.232845, 60),
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    image: "./img/location_marker.svg"
+});
+
+var infowindow = new google.maps.InfoWindow();
+var marker, i;
+
+for (i = 0; i < locations.length; i++) {
+    marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: map.image
     });
-
-    var infowindow = new google.maps.InfoWindow();
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            map: map,
-            icon: map.image
-        });
-        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-            return function () {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-                map.setCenter(marker.position);
-                map.setZoom(14);
-            }
-        })(marker, i));
-    }
-    document.querySelectorAll(".representation_map_text").forEach((element, i) => {
-        element.onclick = () => {
-            marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map,
-                icon: map.image
-            });
-
+    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+        return function () {
             infowindow.setContent(locations[i][0]);
             infowindow.open(map, marker);
             map.setCenter(marker.position);
             map.setZoom(14);
         }
-    })
+    })(marker, i));
 }
+document.querySelectorAll(".representation_map_text").forEach((element, i) => {
+    element.onclick = () => {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+            icon: map.image
+        });
+
+        infowindow.setContent(locations[i][0]);
+        infowindow.open(map, marker);
+        map.setCenter(marker.position);
+        map.setZoom(14);
+    }
+})
