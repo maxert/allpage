@@ -126,6 +126,9 @@ window.onload = () => {
     $('#party .menu .item').tab({
         context: 'parent'
     });
+    $('#finance .menu .item').tab({
+        context: 'parent'
+    });
     $('#context .menu .item')
         .tab({
             // special keyword works same as above
@@ -175,15 +178,17 @@ window.onload = () => {
         let one_count = 100 / max_length;
         document.querySelectorAll(".number_list_end")[0].textContent = max_length;
         document.querySelectorAll(".width_ellipse")[0].style.width = one_count + "%";
-        document.querySelectorAll(".button_interview_next")[0].onclick = () => {
-
+        document.querySelectorAll(".button_interview_next")[0].onclick = (e) => {
             if (count < max_length) {
                 one_count += 100 / max_length;
                 count++;
                 document.querySelectorAll(".width_ellipse")[0].style.width = one_count + "%";
                 document.querySelectorAll(".number_list_start")[0].textContent = count;
                 $.tab('change tab', count);
+            } else {
+                return true
             }
+            return false
         }
         document.querySelectorAll(".button_interview_prev")[0].onclick = () => {
 
