@@ -210,11 +210,11 @@ window.onload = () => {
             }
         })
     }
-
+    if (document.querySelectorAll(".style_color_hash")[0]) {
+        document.querySelectorAll(".style_color_hash").forEach(element => {
+            element.parentElement.parentElement.querySelectorAll(".line_color")[0].style.backgroundColor = "#" + element.textContent;
+        })
+    }
 
 }
-if (document.querySelectorAll(".style_color_hash")[0]) {
-    document.querySelectorAll(".style_color_hash").forEach(element => {
-        element.parentElement.parentElement.querySelectorAll(".line_color")[0].style.backgroundColor = "#" + element.textContent;
-    })
-}
+
