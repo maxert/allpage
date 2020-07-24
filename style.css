@@ -6,6 +6,7 @@
     font-style: normal;
     font-weight: normal;
 }
+
 @font-face {
     font-family: 'Gilroy';
     src: url('font/Gilroy-Heavy.eot');
@@ -15,6 +16,7 @@
     font-weight: 900;
     font-style: normal;
 }
+
 @font-face {
     font-family: "Gilroy";
     src: url("font/Gilroy-Bold.eot") format("embedded-opentype"),
@@ -4225,7 +4227,38 @@ a {
     }
 }
 
+.bread_crumbs.mob_bread {
+    display: none;
+}
+
 @media screen and (max-width: 767px) {
+    .bread_crumbs.mob_bread li a {
+        font-size: 12px;
+        line-height: 12px;
+        color: var(--cblack);
+        font-weight: 500;
+    }
+
+    .bread_crumbs.mob_bread li {
+        display: flex;
+        align-items: center;
+    }
+
+    .bread_crumbs.mob_bread svg {
+        width: 16px;
+        margin-right: 8px;
+        transform: rotate(180deg);
+    }
+
+    .bread_crumbs.mob_bread path {
+        fill: var(--cblack);
+    }
+
+    .bread_crumbs.mob_bread {
+        display: flex;
+        align-items: center;
+    }
+
     .bread_crumbs {
         display: none;
     }
@@ -6585,9 +6618,11 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
 .party_rest_content {
     margin-bottom: 100px;
 }
-.elections_l h1{
+
+.elections_l h1 {
     text-transform: uppercase;
 }
+
 @media screen and (max-width: 1730px) {
     .party_rest_top_text {
         font-size: 32px;
@@ -6964,42 +6999,51 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
     padding-bottom: 200px;
     padding-top: 200px;
 }
-.party_program_accordion .accordion_food{
+
+.party_program_accordion .accordion_food {
     margin-bottom: 0;
 }
+
 @media screen and (max-width: 1730px) {
     .elections_l {
         max-width: 843px;
         padding-top: 120px;
         padding-bottom: 60px;
     }
+
     .elections_go {
         padding-top: 140px;
         padding-bottom: 140px;
     }
-    .elections_go .complex_program_grid{
+
+    .elections_go .complex_program_grid {
         grid-gap: 28px;
     }
+
     .elections {
         display: grid;
         grid-template-columns: minmax(199px, 745px) minmax(0, 512px);
         align-items: flex-end;
         justify-content: space-between;
     }
+
     .elections_tired {
         padding-bottom: 140px;
         padding-top: 140px;
     }
+
     .elections_tired_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 80px;
     }
+
     .elections_tired_item_text {
         font-size: 24px;
         line-height: 30px;
         padding: 32px;
     }
+
     .elections_l h1 {
         font-size: 92px;
         line-height: 92px;
@@ -7016,94 +7060,114 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
     }
 
 }
+
 @media screen and (max-width: 1230px) {
     .elections_tired_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 24px;
     }
+
     .elections_go .complex_program_grid {
         grid-template-columns: 1fr 1fr;
     }
+
     .elections_go {
         padding-top: 120px;
         padding-bottom: 120px;
     }
-    .elections_l{
+
+    .elections_l {
         padding-bottom: 40px;
     }
+
     .elections_tired {
         padding-top: 120px;
         padding-bottom: 120px;
     }
+
     .elections_tired_item_text {
         font-size: 18px;
         line-height: 20px;
         padding: 24px;
     }
+
     .elections_l h1 {
         width: 535px;
         margin-bottom: 136px;
         font-size: 60px;
         line-height: 60px;
     }
+
     .elections_bottom {
         grid-gap: 40px;
         grid-template-columns: 250px;
     }
-    .elections{
+
+    .elections {
         grid-template-columns: minmax(300px, 1fr) minmax(435px, 435px);
     }
 }
+
 @media screen and (max-width: 767px) {
-    .elections_l h1{
+    .elections_l h1 {
         margin-bottom: 40px;
     }
+
     .elections_l {
         padding-bottom: 40px;
     }
 
-    .elections_l{
+    .elections_l {
         padding-top: 60px;
         position: relative;
-        z-index: 1
-    ;
+        z-index: 1;
     }
+
     .elections_bottom {
         grid-gap: 24px;
         grid-template-columns: 142px;
         margin-bottom: 100px;
     }
+
     .elections {
         grid-template-columns: minmax(23px, 1fr) minmax(400px, 400px);
     }
+
     .elections_tired_grid {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 12px;
     }
+
     .elections_tired_item_text {
         padding: 16px;
     }
+
     .elections_tired {
         padding-top: 100px;
         padding-bottom: 100px;
     }
+
     .elections_go {
         padding-top: 100px;
         padding-bottom: 100px;
     }
-    .elections_l h1{
+
+    .elections_l h1 {
         font-size: 40px;
         line-height: 40px;
         width: 240px;
         text-transform: uppercase;
     }
-    .container_elections{
+
+    .container_elections {
         overflow: hidden;
     }
+
     .elections_go .complex_program_grid {
         grid-template-columns: 1fr;
     }
 }
+
 /*elections  css end*/
