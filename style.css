@@ -3348,7 +3348,9 @@ a {
     width: 100%;
     height: auto;
 }
-
+.news_page_l_content_size.consignment_page_l>*{
+    max-width: 100%;
+}
 .news_page_l_content img {
     width: 100%;
     height: auto;
