@@ -8,7 +8,7 @@ export const paths = {
   dest: './dist',
   deploy: './dist/**/*',
   styles: {
-    src: 'src/styles/main.scss',
+    src: ['src/styles/main.scss','src/styles/reset.css'],
     watch: 'src/styles/**/*.scss',
     modules: 'src/modules/**/*.scss',
     dest: 'dist/css',
