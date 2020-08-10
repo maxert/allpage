@@ -1,9 +1,59 @@
 {% extends '../layouts/default.twig' %}
 {% set head_title = "Главная" %}
-{% set body_class = "home" %}
+{% set body_class = "home_page" %}
 {% block page %}
     <div class="container_home">
+        <section class="home">
+            <div class="home_left">
 
+                <div class="home_left_title_t">Какой-то крупный заголовок</div>
+                <div class="home_left_title_b">Со второй строчки - подзаголовок</div>
+                <div class="home_left_container">
+                    <div class="home_left_text">
+                        ARTTEX - украинский производитель солнцезащитных систем для окон с европейскими стандартами
+                        качества!
+                        <br>
+                        <br>
+                        Гарантия срока изготовление и монтажа продукции <span>до 5 дней</span>
+                    </div>
+                    <a href="#" class="home_link">
+                        Перейти в каталог
+                        <div class="image_arrow button_icon">
+                            <img src="../../assets/img/svg/Arrow_button.svg " alt="">
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="home_slider_container">
+                <div class="home_slider">
+                    <div class="home_slider_items">
+                        <img src="../../assets/img/home_img.png" alt="">
+                    </div>
+                    <div class="home_slider_items">
+                        <img src="../../assets/img/home_img.png" alt="">
+                    </div>
+                    <div class="home_slider_items">
+                        <img src="../../assets/img/home_img.png" alt="">
+                    </div>
+                    <div class="home_slider_items">
+                        <img src="../../assets/img/home_img.png" alt="">
+                    </div>
+                </div>
+                <div class="slider_number_container">
+                    <div class="button_prev button_slider">
+                        <img src="../../assets/img/svg/Arrow_button.svg" alt="" class="svg">
+                    </div>
+                    <div class="slider_text_number">
+                        <span class="slider_text_number_b">01</span> / <span class="slider_text_number_s">05</span>
+                    </div>
+                    <div class="button_next button_slider">
+                        <img src="../../assets/img/svg/Arrow_button.svg" alt="" class="svg">
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 {% endblock %}
 {% extends '../components/footer.twig' %}
