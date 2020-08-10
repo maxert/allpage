@@ -50,6 +50,12 @@ header {
   display: none;
 }
 
+.phone_popup_text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+}
+
 .phone_popup_text:hover {
   text-decoration: underline;
 }
@@ -188,7 +194,12 @@ header {
   color: #07021B;
 }
 
-.icon_all.active:before {
+.ui.bottom.popup.phone_popup {
+  width: 100%;
+  max-width: 183px;
+}
+
+.menu_list_grid .icon_all.active:before {
   content: " ";
   background: white;
   top: 100%;

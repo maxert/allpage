@@ -39,6 +39,11 @@ header {
   .ui.bottom.popup.phone_popup:before {
     display: none; }
 
+.phone_popup_text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px; }
+
 .phone_popup_text:hover {
   text-decoration: underline; }
 
@@ -127,13 +132,18 @@ header {
   font-weight: bold;
   color: #07021B; }
 
-.icon_all.active:before {
+.ui.bottom.popup.phone_popup {
+  width: 100%;
+  max-width: 183px; }
+
+.menu_list_grid .icon_all.active:before {
   content: " ";
   background: white;
   top: 100%;
   height: 37px;
   width: 100%;
   position: absolute; }
+
 .icon_all.active .hover_list {
   pointer-events: auto;
   opacity: 1; }
