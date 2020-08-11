@@ -3,7 +3,26 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    $('.city_button_footer')
+        .popup({
 
+            popup: $('.city_button_footer_popup'),
+            on: 'click',
+            distanceAway: -12,
+            offset: 100,
+            position: "right center",
+            onShow: function ($popup) {
+                $popup.classList.add('active');
+            },
+            onHide: function ($popup) {
+                $popup.classList.remove('active');
+            },
+            delay: {
+                show: 300,
+                hide: 800
+            }
+        })
+    ;
     $('img.svg').each(function () {
         var $img = jQuery(this);
         var imgID = $img.attr('id');
@@ -39,10 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
     );
     $('.city_button .custom.button')
         .popup({
-            popup: $('.custom.popup'),
+            popup: $('.custom.popup.city_popup'),
             on: 'click'
         })
     ;
+
+
     $('.phone_popup_header')
         .popup({
             popup: $('.custom.popup.phone_popup'),
@@ -108,6 +129,14 @@ document.addEventListener('DOMContentLoaded', function () {
         func_search(e)
     }
 
+    $('.ui.accordion.accordion_info_home')
+        .accordion()
+    ;
+    $('.ui.dropdown.representative_select')
+        .dropdown({
+            allowAdditions: true
+        })
+    ;
 
     $('.ui.search.dropdown')
         .dropdown({
@@ -216,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
     }
+
     let one = 0;
     document.querySelectorAll(".menu_list_grid li .hover_list").forEach((element, i) => {
         if (i === 0) {
@@ -227,14 +257,124 @@ document.addEventListener('DOMContentLoaded', function () {
 
     })
 
+    $('.home_slider').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        let i = (currentSlide ? currentSlide : 0) + 1;
+        document.querySelectorAll(".home_left_items").forEach(element => {
+            element.classList.remove("active");
+        })
+        document.querySelectorAll(".home_left_items")[i - 1].classList.add("active");
+        document.querySelectorAll(".slider_text_number_b")[0].textContent = i;
+        document.querySelectorAll(".slider_text_number_s")[0].textContent = slick.slideCount;
+    });
+
+    $('.idea_slider').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        let i = (currentSlide ? currentSlide : 0) + 1;
+        document.querySelectorAll(".slider_text_number_b")[2].textContent = i;
+        document.querySelectorAll(".slider_text_number_s")[2].textContent = slick.slideCount;
+    });
+
 
     $('.home_slider').slick({
         dots: false,
         infinite: true,
         speed: 300,
         slidesToShow: 1,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        prevArrow: ".button_prev",
+        nextArrow: ".button_next"
     });
 
+    $('.idea_slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        prevArrow: ".slider_idea_container .button_prev",
+        nextArrow: ".slider_idea_container .button_next"
+    });
+
+    $('.product_slider_1').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        let i = (currentSlide ? currentSlide : 0) + 1;
+        document.querySelectorAll(".slider_text_number_b")[1].textContent = i;
+        document.querySelectorAll(".slider_text_number_s")[1].textContent = slick.slideCount;
+    });
+
+    $('.product_items').on('init afterChange', function (event, slick, currentSlide, nextSlide) {
+        let i = (currentSlide ? currentSlide : 0) + 1;
+        slick.$slider[0].parentElement.querySelectorAll(".content_list_product .product_items_container").forEach(element => {
+            element.classList.remove("active");
+        })
+        slick.$slider[0].parentElement.querySelectorAll(".content_list_product .product_items_container")[i-1].classList.add("active");
+    });
+
+
+
+
+    document.querySelectorAll(".product_items").forEach(element => {
+        $(element).on('swipe', function (event, slick, direction) {
+            if (direction === "left") {
+                $('.product_slider_1').slick('slickNext');
+                $('.product_slider_2').slick('slickNext');
+                $('.product_slider_3').slick('slickNext');
+            } else if (direction === "right") {
+                $('.product_slider_1').slick('slickPrev');
+                $('.product_slider_2').slick('slickPrev');
+                $('.product_slider_3').slick('slickPrev');
+            }
+            // left
+        });
+    })
+
+
+    document.querySelectorAll(".product_slider_container .button_prev")[0].onclick = () => {
+        $('.product_slider_1').slick('slickPrev');
+        $('.product_slider_2').slick('slickPrev');
+        $('.product_slider_3').slick('slickPrev');
+    }
+
+    document.querySelectorAll(".product_slider_container .button_next")[0].onclick = () => {
+
+        $('.product_slider_1').slick('slickNext');
+        $('.product_slider_2').slick('slickNext');
+        $('.product_slider_3').slick('slickNext');
+    }
+
+
+    $('.product_slider_1').slick({
+        infinite: true,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+    });
+
+    $('.product_slider_2').slick({
+        infinite: true,
+        initialSlide: 1,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+    });
+    $('.product_slider_3').slick({
+        infinite: true,
+        initialSlide: 2,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+    });
+    $('.product_slider_2').slick('slickGoTo', 1, true);
+    $('.product_slider_3').slick('slickGoTo', 2, true);
+
+
+
+    document.querySelectorAll(".button_services")[0].onclick = () => {
+        document.querySelectorAll(".services_popup")[0].classList.add('active');
+    }
+    document.querySelectorAll(".close_popup")[0].onclick = () => {
+        document.querySelectorAll(".services_popup")[0].classList.remove('active');
+    }
 
 })
