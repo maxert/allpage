@@ -11,6 +11,12 @@ import changed from "gulp-changed";
 import { paths } from "../config";
 
 // Task
+
+export function copyLibrary(){
+    return src(paths.library.libraryCopy)
+        .pipe(changed(paths.library.destLibrary))
+        .pipe(dest(paths.library.destLibrary))
+}
 export function copy() {
   return src(paths.copy.src)
     .pipe(changed(paths.copy.dest))

@@ -15,7 +15,7 @@ export const paths = {
     lint: 'src/styles/**/*.s+(a|c)ss'
   },
   scripts: {
-    src: './src/scripts/app.js',
+    src: ['./src/scripts/app.js'],
     watch: 'src/scripts/**/*.js',
     modules: 'src/modules/**/*.js',
     dest: 'dist/js',
@@ -25,6 +25,10 @@ export const paths = {
     watch: 'src/templates/**/*.{twig,html}',
     modules: 'src/modules/**/*.{twig,html}',
     dest: 'dist/'
+  },
+  library:{
+    destLibrary: 'dist/library',
+    libraryCopy: 'src/library/**/*',
   },
   assets: {
     src: 'src/assets/**/*',
