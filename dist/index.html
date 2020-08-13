@@ -8,7 +8,7 @@
   <title>Главная</title>
 
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
@@ -322,6 +322,7 @@
     <div class="catalog_header">
       <div class="btn_block">
         <img src="../../assets/img/svg/btn.svg" alt="">
+        <img src="../../assets/img/svg/close.svg" class="svg close_icon" alt="">
       </div>
       <div class="catalog_header_text"> Каталог товаров</div>
 
@@ -405,9 +406,9 @@
       <div class="menu_list_catalog">
         <ul class="menu_catalog_grid">
           <li>
-            <a href="">Жалюзи</a>
+            <a href="#">Жалюзи</a>
             <ul class="menu_hover_catalog">
-              <li class="active"><a href="#">Горизонтальные жалюзи</a>
+              <li><a href="#">Горизонтальные жалюзи</a>
                 <ul class="menu_catalog_last">
                   <li>
                     <a href="#">Пластиковые 89 мм.</a>
@@ -427,7 +428,28 @@
               <li><a href="#">Жалюзи по назначению</a></li>
             </ul>
           </li>
-          <li><a href="#">Тканевые ролеты</a></li>
+          <li><a href="#">Тканевые ролеты</a>
+            <ul class="menu_hover_catalog">
+              <li><a href="#">Горизонтальные жалюзи2</a>
+                <ul class="menu_catalog_last">
+                  <li>
+                    <a href="#">Пластиковые 89 мм.</a>
+                  </li>
+                  <li>
+                    <a href="#">Тканевые 127/89 мм.</a>
+                  </li>
+                  <li>
+                    <a href="#">Мультифактурные 89 мм.</a>
+                  </li>
+                  <li>
+                    <a href="#">Нитяные 89 мм. </a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Вертикальные жалюзи</a></li>
+              <li><a href="#">Жалюзи по назначению</a></li>
+            </ul>
+          </li>
           <li><a href="#">Римские шторы</a></li>
           <li><a href="#">Рулонные шторы</a></li>
           <li><a href="#">Жалюзи День-Ночь</a></li>
@@ -1458,7 +1480,7 @@
           <p>Если Вас некачественно обслужили, у Вас возникли притензии к товару или же Вы хотите
             поблагодарить
             нас за оперативную и качественную работу.</p>
-          <button class="button_all button_director">Написать директору</button>
+          <button class="button_all button_director">Написать руководителю</button>
         </div>
       </div>
       <div class="footer_item">
@@ -1574,27 +1596,37 @@
     </div>
     <form class="ui form">
       <div class="field">
-        <input type="text" name="first-name" placeholder="Введите Ваше имя">
+        <div class="anim_input">
+          <input type="text" name="first-name" placeholder="Введите Ваше имя">
+        </div>
       </div>
       <div class="field">
-        <input type="text" name="last-name" placeholder="Введите Ваш телефон">
+        <div class="anim_input">
+          <input type="text" name="last-name" placeholder="Введите Ваш телефон">
+        </div>
       </div>
       <div class="field">
-        <select class="ui search dropdown">
-          <option value="">Укажите Ваш город</option>
-          <option value="KH">Харьков</option>
-          <option value="KV">Киев</option>
-        </select>
+        <div class="anim_input">
+          <select class="ui search dropdown">
+            <option value="">Укажите Ваш город</option>
+            <option value="KH">Харьков</option>
+            <option value="KV">Киев</option>
+          </select>
+        </div>
       </div>
 
       <div class="form_date">
         <h4 class="ui dividing header_date">Укажите удобную дату и время</h4>
         <div class="two fields">
           <div class="field">
-            <input placeholder="Дата" type="text">
+            <div class="anim_input">
+              <input placeholder="Дата" type="text">
+            </div>
           </div>
           <div class="field">
-            <input placeholder="Время" type="text">
+            <div class="anim_input">
+              <input placeholder="Время" type="text">
+            </div>
           </div>
         </div>
       </div>
@@ -1614,10 +1646,14 @@
     </div>
     <form class="ui form form_call">
       <div class="field">
-        <input type="text" name="first-name" placeholder="Введите Ваше имя">
+        <div class="anim_input">
+          <input type="text" name="first-name" placeholder="Введите Ваше имя">
+        </div>
       </div>
       <div class="field">
-        <input type="text" name="last-name" placeholder="Введите Ваш телефон">
+        <div class="anim_input">
+          <input type="text" name="last-name" placeholder="Введите Ваш телефон">
+        </div>
       </div>
       <button class="ui button_all submit" type="submit">Оформить Заявку</button>
       <div class="field">
@@ -1636,17 +1672,13 @@
       </div>
       <form class="ui form form_entrance">
         <div class="field">
-          <input type="text" name="first-name" placeholder="E-mail или номер телефона">
+          <div class="anim_input">
+            <input type="text" name="first-name" placeholder="E-mail или номер телефона">
+          </div>
           <label for="first-name" class="entrance_label"> Для авторизации по номеру телефона введите его в
             формате: 38ХХХХХХХХХХ</label>
         </div>
-        <div class="ui button_all submit entrance_button" type="submit">Далее</div>
-        <div class="field">
-          <div class="ui checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Даю согласие на обработку моих персональных данных.</label>
-          </div>
-        </div>
+        <div class="ui button_all submit entrance_button">Далее</div>
       </form>
       <div class="modal_text_bottom" id="registration">Регистрация</div>
     </div>
@@ -1685,11 +1717,15 @@
       </div>
       <form class="ui form form_password_reset">
         <div class="field ">
-          <input type="password" name="first-name" placeholder="Контрольное слово">
+          <div class="anim_input">
+            <input type="password" name="first-name" placeholder="Контрольное слово">
+          </div>
         </div>
         <div class="field ui icon input password_container">
           <i class="low vision icon"></i>
-          <input type="password" name="first-name" placeholder="Пароль">
+          <div class="anim_input">
+            <input type="password" name="first-name" placeholder="Пароль">
+          </div>
         </div>
         <p>
           Ссылка на востановление пароля отправленна на text@gmail.com
@@ -1698,7 +1734,7 @@
           Если ссылка не пришла проверьте спам или повторите попытку
         </p>
 
-        <div class="ui button_all submit entrance_button" type="submit">Востоновить</div>
+        <div class="ui button_all submit password_reset_button" type="submit">Востоновить</div>
       </form>
       <div class="modal_text_bottom" id="password_reset">Вход</div>
     </div>
@@ -1712,13 +1748,15 @@
       <form class="ui form form_email">
         <div class="field ui icon input password_container">
           <i class="low vision icon"></i>
-          <input type="password" name="first-name" placeholder="Пароль">
+          <div class="anim_input">
+            <input type="password" name="first-name" placeholder="Пароль">
+          </div>
         </div>
         <div class="password_info">
           <div class="password_reset link_underline">Восстановить пароль</div>
           <div class="prev_modal link_underline">Ввести другой E-mail</div>
         </div>
-        <div class="ui button_all submit entrance_button" type="submit">Войти</div>
+        <div class="ui button_all submit modal_email_button" type="submit">Войти</div>
       </form>
       <div class="modal_text_bottom" id="registration">Регистрация</div>
     </div>
@@ -1731,23 +1769,41 @@
       </div>
       <form class="ui form form_registration">
         <div class="field">
-          <input type="text" name="first-name" placeholder="E-mail или номер телефона">
+          <div class="anim_input">
+            <input type="text" name="first-name" placeholder="Введите Ваше имя">
+          </div>
         </div>
         <div class="field">
-          <input type="text" name="first-name" placeholder="Введите Ваш телефон">
+          <div class="anim_input geeks">
+            <input type="text" name="first-name" placeholder="Введите Ваш телефон">
+          </div>
+        </div>
+        <div class="field error">
+          <div class="anim_input">
+            <input type="text" name="first-name" placeholder="Введите Ваш E-mail">
+          </div>
         </div>
         <div class="field">
-          <select class="ui search dropdown">
-            <option value="">Укажите Ваш го род</option>
-            <option value="KH">Харьков</option>
-            <option value="KV">Киев</option>
-          </select>
+          <div class="anim_input">
+            <input type="text" name="first-name" placeholder="Введите Ваш телефон">
+          </div>
+        </div>
+        <div class="field">
+          <div class="anim_input geeks">
+            <select class="ui search dropdown">
+              <option value="">Укажите Ваш город</option>
+              <option value="KH">Харьков</option>
+              <option value="KV">Киев</option>
+            </select>
+          </div>
         </div>
         <div class="field ui icon input password_container">
           <i class="low vision icon"></i>
-          <input type="password" name="first-name" placeholder="Пароль">
+          <div class="anim_input">
+            <input type="password" name="first-name" placeholder="Пароль">
+          </div>
         </div>
-        <button class="ui button_all submit entrance_button" type="submit">Зарегистрироваться</button>
+        <button class="ui button_all submit registration_button" type="submit">Зарегистрироваться</button>
       </form>
       <div class="modal_text_bottom" id="entrance">Вход</div>
     </div>

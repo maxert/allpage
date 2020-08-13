@@ -2,6 +2,7 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    /*Offset block*/
     function offset(el) {
         var rect = el.getBoundingClientRect(),
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return {top: rect.top + scrollTop, left: rect.left + scrollLeft, topOffset: el.getBoundingClientRect().top}
     }
+    /*Offset block*/
 
     $(window).scroll(function () {
         if ($(window).scrollTop() > document.querySelectorAll("header")[0].clientHeight + document.querySelectorAll(".header_bottom")[0].clientHeight) {
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.header_fixed').removeClass("active")
         }
     });
+    /* Svg image*/
     $('img.svg').each(function () {
         var $img = jQuery(this);
         var imgID = $img.attr('id');
@@ -36,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 $svg = $svg.attr('class', imgClass + ' replaced-svg');
             }
 
-            // Remove any invalid XML tags as per http://validator.w3.org
             $svg = $svg.removeAttr('xmlns:a');
 
             // Replace image with new SVG
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 'xml');
 
     });
+    /* Svg image*/
     $('.ui.dropdown.all_dropdown').dropdown({
             transition: "auto",
             duration: 0,
@@ -216,21 +219,62 @@ document.addEventListener('DOMContentLoaded', function () {
         .modal('setting', 'transition', 'slide left')
         .modal('attach events', '.ui.modal.modal_email .password_reset ')
     ;
-    $('.ui.modal.modal_entrance')
-        .modal('setting', 'transition', 'slide left')
-        .modal('attach events', '.ui.modal.modal_password_reset #password_reset ')
-    ;
-    $('.ui.modal.modal_email')
-        .modal('setting', 'transition', 'slide left')
-        .modal('attach events', '.ui.modal.modal_entrance .entrance_button')
-    ;
+
+    let formEmailPhone = document.querySelectorAll(".form_entrance input")[0];
+
+    formEmailPhone.onkeyup=(e)=>{
+        let regularPhone = formEmailPhone.value.match(/^\+?3?8?(0\d{9})$/g);
+        let regularEmail = formEmailPhone.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        if(regularPhone){
+            formEmailPhone.parentElement.classList.add("geeks")
+            formEmailPhone.parentElement.parentElement.classList.remove("error")
+        }else if(regularEmail){
+            formEmailPhone.parentElement.classList.add("geeks")
+            formEmailPhone.parentElement.parentElement.classList.remove("error")
+        }else{
+            formEmailPhone.parentElement.classList.remove("geeks")
+        }
+
+    }
+
+    document.querySelectorAll(".modal_entrance .entrance_button")[0].onclick=(e)=>{
+        let regularPhone = formEmailPhone.value.match(/^\+?3?8?(0\d{9})$/g);
+        let regularEmail = formEmailPhone.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        if(regularPhone){
+            $('.ui.modal.modal_entrance')
+                .modal('setting', 'transition', 'slide left')
+            ;
+            $('.ui.modal.modal_phone')
+                .modal('setting', 'transition', 'slide left')
+                .modal("show")
+            ;
+        }else if(regularPhone===null){
+            formEmailPhone.parentElement.parentElement.classList.add("error")
+        }
+        if(regularEmail){
+            $('.ui.modal.modal_entrance')
+                .modal('setting', 'transition', 'slide left')
+            ;
+            $('.ui.modal.modal_email')
+                .modal('setting', 'transition', 'slide left')
+                .modal("show")
+            ;
+        }else if(regularEmail===null){
+            formEmailPhone.parentElement.parentElement.classList.add("error")
+        }
+    }
+
+    // $('.ui.modal.modal_email')
+    //     .modal('setting', 'transition', 'slide left')
+    //     .modal('attach events', '.ui.modal.modal_entrance .entrance_button')
+    // ;
 
     $('.ui.modal.modal_registration')
         .modal('setting', 'transition', 'slide left')
         .modal('attach events', '.ui.modal.modal_phone #registration_phone')
     ;
 
-
+    /*Password eye*/
     document.querySelectorAll(".password_container .vision").forEach(element => {
         element.onclick = () => {
             if (!element.classList.contains("active")) {
@@ -242,6 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     })
+    /*Password eye*/
 
     $('.checkbox').checkbox();
 
@@ -382,15 +427,39 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll(".close_popup")[0].onclick = () => {
         document.querySelectorAll(".services_popup")[0].classList.remove('active');
     }
-    document.querySelectorAll(".menu_catalog_grid>li").forEach(element => {
+
+    /*Mega menu*/
+    document.querySelectorAll(".menu_catalog_grid ul").forEach(element => {
+        element.parentElement.classList.add("arrow");
+    })
+    document.querySelectorAll(".menu_catalog_grid li").forEach(element => {
         element.onmouseover = () => {
-            element.classList.add("active");
-            element.lastElementChild.classList.add("active");
-        }
-        element.onmouseout = () => {
-            element.classList.remove("active");
-            element.lastElementChild.classList.remove("active");
+
+            if (element.parentElement.classList.contains("active") || !element.classList.contains("active")) {
+                element.offsetParent.querySelectorAll("li").forEach(elementRemove => {
+                    elementRemove.classList.remove("active");
+                    elementRemove.lastElementChild.classList.remove("active");
+                })
+            }
+
+            element.classList.add("active")
+            if (element.lastElementChild.tagName === "UL") {
+                element.lastElementChild.classList.add("active");
+            }
         }
     })
+    /*Mega menu*/
 
+
+
+    document.querySelectorAll(".catalog_header")[0].onclick=()=>{
+        if(!document.querySelectorAll(".catalog_header")[0].classList.contains("active")){
+            document.querySelectorAll(".catalog_header")[0].classList.add("active")
+            document.querySelectorAll(".header_menu_catalog")[0].classList.add("active")
+
+        }else{
+            document.querySelectorAll(".catalog_header")[0].classList.remove("active")
+            document.querySelectorAll(".header_menu_catalog")[0].classList.remove("active")
+        }
+    }
 })
