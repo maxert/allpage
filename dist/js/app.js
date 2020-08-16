@@ -10,15 +10,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return {top: rect.top + scrollTop, left: rect.left + scrollLeft, topOffset: el.getBoundingClientRect().top}
     }
-    /*Offset block*/
 
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > document.querySelectorAll("header")[0].clientHeight + document.querySelectorAll(".header_bottom")[0].clientHeight) {
-            $('.header_fixed').addClass("active")
-        } else {
-            $('.header_fixed').removeClass("active")
-        }
-    });
+    /*Offset block*/
+    if (window.innerWidth > 1275) {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > document.querySelectorAll("header")[0].clientHeight + document.querySelectorAll(".header_bottom")[0].clientHeight) {
+                $('.header_fixed').addClass("active")
+            } else {
+                $('.header_fixed').removeClass("active")
+            }
+        });
+    } else {
+        $('.header_fixed').addClass("active")
+    }
     /* Svg image*/
     $('img.svg').each(function () {
         var $img = jQuery(this);
@@ -103,12 +107,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const func_search = (event) => {
-        if (event.target.value.length >= 4) {
-            let popup = document.querySelectorAll(".popup_search")[0];
-            document.querySelectorAll(".popup_search .search_header_b input")[0].value = event.target.value;
-            popup.classList.add("active");
-            mouseup(popup);
-            document.body.classList.add("dimmed", "dimmable");
+        let popup = document.querySelectorAll(".popup_search")[0];
+        debugger
+        popup.classList.add("active");
+        mouseup(popup);
+        document.body.classList.add("dimmed", "dimmable");
+        if (window.innerWidth > 1275) {
+            if (event.target.value.length >= 4) {
+                popup.querySelectorAll("input")[0].focus();
+                document.querySelectorAll(".popup_search .search_header_b input")[0].value = event.target.value;
+                mouseup(popup);
+                popup.parentElement.classList.add("active");
+                popup.style.left = offset(event.target).left + "px";
+                popup.style.top = offset(event.target).topOffset + "px";
+            }
+        } else {
             popup.parentElement.classList.add("active");
             popup.style.left = offset(event.target).left + "px";
             popup.style.top = offset(event.target).topOffset + "px";
@@ -137,6 +150,30 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
     })
+    if (window.innerWidth <= 1275) {
+        document.querySelectorAll(".header_fixed  .popup_click_search")[0].onclick = (e) => {
+            func_search(e)
+            document.querySelectorAll(".popup_search input")[0].focus();
+        }
+        document.querySelectorAll(".popup_search .close")[0].onclick = () => {
+            document.querySelectorAll(".popup_search")[0].classList.remove("active");
+            document.querySelectorAll(".popup_search")[0].parentElement.classList.remove("active");
+            document.querySelectorAll(".popup_search input")[0].value="";
+            document.body.classList.remove("dimmed", "dimmable");
+        }
+
+
+        $('.footer_container>div:nth-child(2)')
+            .accordion({
+                selector    : {
+                    accordion : '.footer_item',
+                    title     : '.accordion_footer',
+                    trigger   : '.accordion_footer',
+                    content   : '.footer_item_list'
+                }
+            })
+        ;
+    }
 
 
     $('.ui.accordion.accordion_info_home')
@@ -222,25 +259,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let formEmailPhone = document.querySelectorAll(".form_entrance input")[0];
 
-    formEmailPhone.onkeyup=(e)=>{
+    formEmailPhone.onkeyup = (e) => {
         let regularPhone = formEmailPhone.value.match(/^\+?3?8?(0\d{9})$/g);
         let regularEmail = formEmailPhone.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-        if(regularPhone){
+        if (regularPhone) {
             formEmailPhone.parentElement.classList.add("geeks")
             formEmailPhone.parentElement.parentElement.classList.remove("error")
-        }else if(regularEmail){
+        } else if (regularEmail) {
             formEmailPhone.parentElement.classList.add("geeks")
             formEmailPhone.parentElement.parentElement.classList.remove("error")
-        }else{
+        } else {
             formEmailPhone.parentElement.classList.remove("geeks")
         }
 
     }
 
-    document.querySelectorAll(".modal_entrance .entrance_button")[0].onclick=(e)=>{
+    document.querySelectorAll(".modal_entrance .entrance_button")[0].onclick = (e) => {
         let regularPhone = formEmailPhone.value.match(/^\+?3?8?(0\d{9})$/g);
         let regularEmail = formEmailPhone.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-        if(regularPhone){
+        if (regularPhone) {
             $('.ui.modal.modal_entrance')
                 .modal('setting', 'transition', 'slide left')
             ;
@@ -248,10 +285,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 .modal('setting', 'transition', 'slide left')
                 .modal("show")
             ;
-        }else if(regularPhone===null){
+        } else if (regularPhone === null) {
             formEmailPhone.parentElement.parentElement.classList.add("error")
         }
-        if(regularEmail){
+        if (regularEmail) {
             $('.ui.modal.modal_entrance')
                 .modal('setting', 'transition', 'slide left')
             ;
@@ -259,15 +296,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 .modal('setting', 'transition', 'slide left')
                 .modal("show")
             ;
-        }else if(regularEmail===null){
+        } else if (regularEmail === null) {
             formEmailPhone.parentElement.parentElement.classList.add("error")
         }
     }
-
-    // $('.ui.modal.modal_email')
-    //     .modal('setting', 'transition', 'slide left')
-    //     .modal('attach events', '.ui.modal.modal_entrance .entrance_button')
-    // ;
 
     $('.ui.modal.modal_registration')
         .modal('setting', 'transition', 'slide left')
@@ -347,79 +379,100 @@ document.addEventListener('DOMContentLoaded', function () {
         prevArrow: ".slider_idea_container .button_prev",
         nextArrow: ".slider_idea_container .button_next"
     });
-
-    $('.product_slider_1').on('init reInit afterChange', function (event, slick, currentSlide) {
-        let i = (currentSlide ? currentSlide : 0) + 1;
-        document.querySelectorAll(".slider_text_number_b")[1].textContent = i;
-        document.querySelectorAll(".slider_text_number_s")[1].textContent = slick.slideCount;
-    });
-
-    $('.product_items').on('init afterChange', function (event, slick, currentSlide) {
-        let i = (currentSlide ? currentSlide : 0) + 1;
-        slick.$slider[0].parentElement.querySelectorAll(".content_list_product .product_items_container").forEach(element => {
-            element.classList.remove("active");
-        })
-        slick.$slider[0].parentElement.querySelectorAll(".content_list_product .product_items_container")[i - 1].classList.add("active");
-    });
-
-
-    document.querySelectorAll(".product_items").forEach(element => {
-        $(element).on('swipe', function (event, slick, direction) {
-            if (direction === "left") {
-                $('.product_slider_1').slick('slickNext');
-                $('.product_slider_2').slick('slickNext');
-                $('.product_slider_3').slick('slickNext');
-            } else if (direction === "right") {
-                $('.product_slider_1').slick('slickPrev');
-                $('.product_slider_2').slick('slickPrev');
-                $('.product_slider_3').slick('slickPrev');
-            }
-            // left
+    if (window.innerWidth > 1275) {
+        $('.product_slider_1').on('init reInit afterChange', function (event, slick, currentSlide) {
+            let i = (currentSlide ? currentSlide : 0) + 1;
+            document.querySelectorAll(".slider_text_number_b")[1].textContent = i;
+            document.querySelectorAll(".slider_text_number_s")[1].textContent = slick.slideCount;
         });
-    })
+
+        $('.product_items').on('init afterChange', function (event, slick, currentSlide) {
+            let i = (currentSlide ? currentSlide : 0) + 1;
+            slick.$slider[0].parentElement.querySelectorAll(".content_list_product .product_items_container").forEach(element => {
+                element.classList.remove("active");
+            })
+            slick.$slider[0].parentElement.querySelectorAll(".content_list_product .product_items_container")[i - 1].classList.add("active");
+        });
 
 
-    document.querySelectorAll(".product_slider_container .button_prev")[0].onclick = () => {
-        $('.product_slider_1').slick('slickPrev');
-        $('.product_slider_2').slick('slickPrev');
-        $('.product_slider_3').slick('slickPrev');
+        document.querySelectorAll(".product_items").forEach(element => {
+            $(element).on('swipe', function (event, slick, direction) {
+                if (direction === "left") {
+                    $('.product_slider_1').slick('slickNext');
+                    $('.product_slider_2').slick('slickNext');
+                    $('.product_slider_3').slick('slickNext');
+                } else if (direction === "right") {
+                    $('.product_slider_1').slick('slickPrev');
+                    $('.product_slider_2').slick('slickPrev');
+                    $('.product_slider_3').slick('slickPrev');
+                }
+                // left
+            });
+        })
+
+
+        document.querySelectorAll(".product_slider_container .button_prev")[0].onclick = () => {
+            $('.product_slider_1').slick('slickPrev');
+            $('.product_slider_2').slick('slickPrev');
+            $('.product_slider_3').slick('slickPrev');
+        }
+
+        document.querySelectorAll(".product_slider_container .button_next")[0].onclick = () => {
+
+            $('.product_slider_1').slick('slickNext');
+            $('.product_slider_2').slick('slickNext');
+            $('.product_slider_3').slick('slickNext');
+        }
+
+
+        $('.product_slider_1').slick({
+            infinite: true,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: true,
+        });
+
+        $('.product_slider_2').slick({
+            infinite: true,
+            initialSlide: 1,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: true,
+        });
+        $('.product_slider_3').slick({
+            infinite: true,
+            initialSlide: 2,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: true,
+        });
+        $('.product_slider_2').slick('slickGoTo', 1, true);
+        $('.product_slider_3').slick('slickGoTo', 2, true);
+    } else {
+        $('.product_slider_mob').on('init reInit afterChange', function (event, slick, currentSlide) {
+            let i = (currentSlide ? currentSlide : 0) + 1;
+            document.querySelectorAll(".slider_text_number_b")[1].textContent = i;
+            document.querySelectorAll(".slider_text_number_s")[1].textContent = slick.slideCount;
+        });
+        $('.product_slider_mob').slick({
+            infinite: false,
+            arrows: false,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            adaptiveHeight: true,
+        });
+        document.querySelectorAll(".product_slider_container .button_prev")[0].onclick = () => {
+            $('.product_slider_mob').slick('slickPrev');
+        }
+
+        document.querySelectorAll(".product_slider_container .button_next")[0].onclick = () => {
+            $('.product_slider_mob').slick('slickNext');
+        }
+
     }
-
-    document.querySelectorAll(".product_slider_container .button_next")[0].onclick = () => {
-
-        $('.product_slider_1').slick('slickNext');
-        $('.product_slider_2').slick('slickNext');
-        $('.product_slider_3').slick('slickNext');
-    }
-
-
-    $('.product_slider_1').slick({
-        infinite: true,
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
-    });
-
-    $('.product_slider_2').slick({
-        infinite: true,
-        initialSlide: 1,
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
-    });
-    $('.product_slider_3').slick({
-        infinite: true,
-        initialSlide: 2,
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
-    });
-    $('.product_slider_2').slick('slickGoTo', 1, true);
-    $('.product_slider_3').slick('slickGoTo', 2, true);
-
 
     document.querySelectorAll(".button_services")[0].onclick = () => {
         document.querySelectorAll(".services_popup")[0].classList.add('active');
@@ -430,34 +483,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /*Mega menu*/
     document.querySelectorAll(".menu_catalog_grid ul").forEach(element => {
-        element.parentElement.classList.add("arrow");
+        let elementAdd = document.createElement("i");
+        elementAdd.classList.add("dropdown", "icon");
+        element.parentElement.firstElementChild.appendChild(elementAdd);
     })
-    document.querySelectorAll(".menu_catalog_grid li").forEach(element => {
-        element.onmouseover = () => {
+    if (window.innerWidth > 1275) {
+        document.querySelectorAll(".menu_catalog_grid li").forEach(element => {
+            element.onmouseover = () => {
 
-            if (element.parentElement.classList.contains("active") || !element.classList.contains("active")) {
-                element.offsetParent.querySelectorAll("li").forEach(elementRemove => {
-                    elementRemove.classList.remove("active");
-                    elementRemove.lastElementChild.classList.remove("active");
-                })
-            }
+                if (element.parentElement.classList.contains("active") || !element.classList.contains("active")) {
+                    element.offsetParent.querySelectorAll("li").forEach(elementRemove => {
+                        elementRemove.classList.remove("active");
+                        elementRemove.lastElementChild.classList.remove("active");
+                    })
+                }
 
-            element.classList.add("active")
-            if (element.lastElementChild.tagName === "UL") {
-                element.lastElementChild.classList.add("active");
+                element.classList.add("active")
+                if (element.lastElementChild.tagName === "UL") {
+                    element.lastElementChild.classList.add("active");
+                }
             }
-        }
-    })
+        })
+    } else {
+        document.querySelectorAll(".menu_catalog_grid i").forEach(element => {
+            element.parentElement.parentElement.classList.add("ui", "accordion")
+            element.parentElement.nextElementSibling.classList.add("content");
+            element.parentElement.classList.add("title");
+
+        })
+        $('.menu_catalog_grid>.ui.accordion')
+            .accordion()
+        ;
+    }
     /*Mega menu*/
 
 
-
-    document.querySelectorAll(".catalog_header")[0].onclick=()=>{
-        if(!document.querySelectorAll(".catalog_header")[0].classList.contains("active")){
+    document.querySelectorAll(".catalog_header")[0].onclick = () => {
+        if (!document.querySelectorAll(".catalog_header")[0].classList.contains("active")) {
             document.querySelectorAll(".catalog_header")[0].classList.add("active")
             document.querySelectorAll(".header_menu_catalog")[0].classList.add("active")
 
-        }else{
+        } else {
             document.querySelectorAll(".catalog_header")[0].classList.remove("active")
             document.querySelectorAll(".header_menu_catalog")[0].classList.remove("active")
         }
