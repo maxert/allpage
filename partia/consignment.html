@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница новости </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+    ></script>
+</head>
+<body>
+<header>
+    <div class="header_top">
+
+        <div class="header_top_left">
+            <a href="/" class="logo">
+                <img src="./img/Button.svg" alt="logo">
+            </a>
+
+            <div class="btn_mobile">
+                <div class="btn_mobile_close">
+                    <img src="./img/Union.svg" alt="">
+                    Закрити
+                </div>
+                <div class="btn_mobile_open">
+                    <img src="./img/Group%206.svg" alt="">
+                    Меню
+                </div>
+            </div>
+            <div class="language_link">
+                <div class="language_link_text">Укр</div>
+                <div class="language_link_hov">
+                    <a class="active" href="#">Укр</a>
+                    <a href="#">Рус</a>
+                </div>
+            </div>
+            <div class="header_top_city">
+                <div class="icon">
+                    <img src="./img/location.svg" alt="">
+                </div>
+                <div class="header_top_city_text d_flex">
+                    Ваше місто:
+                    <form class="list_link">
+                        <div class="result_city">Харкiв</div>
+                        <div class="list_link_hov">
+                            <div class="list_link_hov_text">
+                                Виберіть місто
+                            </div>
+                            <div class="list_link_hov_all">
+                                <div class="form_radio">
+                                    <input id="radio-1" type="radio" name="radio" value="1" checked>
+                                    <label for="radio-1">Київ</label>
+                                </div>
+
+                                <div class="form_radio">
+                                    <input id="radio-2" type="radio" name="radio" value="2">
+                                    <label for="radio-2">Харків</label>
+                                </div>
+
+                                <div class="form_radio">
+                                    <input id="radio-3" type="radio" name="radio" value="3">
+                                    <label for="radio-3">Одеса</label>
+                                </div>
+
+                                <div class="form_radio">
+                                    <input id="radio-4" type="radio" name="radio" value="4">
+                                    <label for="radio-4">Дніпро</label>
+                                </div>
+                                <div class="form_radio">
+                                    <input id="radio-5" type="radio" name="radio" value="5">
+                                    <label for="radio-5">Чернівці</label>
+                                </div>
+                                <div class="form_radio">
+                                    <input id="radio-6" type="radio" name="radio" value="6">
+                                    <label for="radio-6">Чернігів</label>
+                                </div>
+                                <div class="form_radio">
+                                    <input id="radio-7" type="radio" name="radio" value="7">
+                                    <label for="radio-7">Хмельницький</label>
+                                </div>
+                            </div>
+
+                            <input type="text" placeholder="Або введіть інше місто">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <a href="" class="button_all button_header mob_button">Приєднуйся до нас</a>
+
+            <a href="#" class="version_glasses d_flex">
+                <div class="icon">
+                    <img src="./img/eye%201.svg" alt="">
+                </div>
+                Версія для слабозорих
+            </a>
+        </div>
+        <div class="header_top_right">
+            <div class="header_top_soc_link">
+                <a href="#" target="_blank"><img src="./img/Istagram.svg" class="img-svg" alt=""></a>
+                <a href="#" target="_blank"><img src="./img/Fasebook%201.svg" class="img-svg" alt=""></a>
+                <a href="#" target="_blank"><img src="./img/Twitter.svg" class="img-svg" alt=""></a>
+                <a href="#" target="_blank"><img src="./img/Youtype%201.svg" class="img-svg" alt=""></a>
+            </div>
+            <div class="header_top_right_text">
+                Нас вже: <span>56 012</span>
+            </div>
+            <a href="#" class="button_all button_header">Приєднуйся до нас</a>
+        </div>
+    </div>
+    <nav class="header_bottom">
+        <a href="/" class="logo">
+            <img src="./img/Button.svg" alt="logo">
+        </a>
+        <ul class="menu_list">
+            <li><a href="#">Новини</a></li>
+            <li><a href="#">Вибори 2020</a></li>
+            <li><a href="#">Обличчя</a></li>
+            <li><a href="#">Партія</a></li>
+            <li><a href="#">Візьми участь</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </nav>
+    <div class="header_bottom_mob">
+        <div class="header_mob_container">
+            <a href="#" class="button_all button_header mob_button">Приєднуйся до нас</a>
+            <div class="language_footer">
+                <div class="language_footer_links d_flex">
+                    <a href="#" class="active">Укр</a>|<a href="#">Рус</a>
+                </div>
+            </div>
+            <div class="header_top_city">
+                <div class="icon">
+                    <img src="./img/location.svg" alt="">
+                </div>
+                <div class="header_top_city_text d_flex">
+                    Ваше місто:
+                    <form class="list_link">
+                        <div class="result_city">Харкiв</div>
+                        <div class="list_link_hov">
+                            <div class="list_link_hov_text">
+                                Виберіть місто
+                            </div>
+                            <div class="list_link_hov_all">
+                                <div class="form_radio">
+                                    <input id="radio-1" type="radio" name="radio" value="1" checked>
+                                    <label for="radio-1">Київ</label>
+                                </div>
+
+                                <div class="form_radio">
+                                    <input id="radio-2" type="radio" name="radio" value="2">
+                                    <label for="radio-2">Харків</label>
+                                </div>
+
+                                <div class="form_radio">
+                                    <input id="radio-3" type="radio" name="radio" value="3">
+                                    <label for="radio-3">Одеса</label>
+                                </div>
+
+                                <div class="form_radio">
+                                    <input id="radio-4" type="radio" name="radio" value="4">
+                                    <label for="radio-4">Дніпро</label>
+                                </div>
+                                <div class="form_radio">
+                                    <input id="radio-5" type="radio" name="radio" value="5">
+                                    <label for="radio-5">Чернівці</label>
+                                </div>
+                                <div class="form_radio">
+                                    <input id="radio-6" type="radio" name="radio" value="6">
+                                    <label for="radio-6">Чернігів</label>
+                                </div>
+                                <div class="form_radio">
+                                    <input id="radio-7" type="radio" name="radio" value="7">
+                                    <label for="radio-7">Хмельницький</label>
+                                </div>
+                            </div>
+
+                            <input type="text" placeholder="Або введіть інше місто">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <a href="#" class="version_glasses d_flex">
+                <div class="icon">
+                    <img src="./img/eye%201.svg" alt="">
+                </div>
+                Версія для слабозорих
+            </a>
+            <nav class="header_bottom">
+                <ul class="menu_list">
+                    <li><a href="#">Новини</a></li>
+                    <li><a href="#">Вибори 2020</a></li>
+                    <li><a href="#">Обличчя</a></li>
+                    <li><a href="#">Партія</a></li>
+                    <li><a href="#">Візьми участь</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="header_top_soc_link">
+                <a href="#" target="_blank"><img src="./img/Istagram.svg" class="img-svg" alt=""></a>
+                <a href="#" target="_blank"><img src="./img/Fasebook%201.svg" class="img-svg" alt=""></a>
+                <a href="#" target="_blank"><img src="./img/Twitter.svg" class="img-svg" alt=""></a>
+                <a href="#" target="_blank"><img src="./img/Youtype%201.svg" class="img-svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container_all container_home container_consignment">
+    <ul class="bread_crumbs">
+        <li class="bread_link">
+            <a href="#">Головна</a>
+        </li>
+        <li class="bread_link">
+            <img src="./img/arrow_left.svg" alt="">
+            Партія
+        </li>
+    </ul>
+    <ul class="bread_crumbs mob_bread">
+        <li class="bread_link">
+            <img src="./img/arrow.svg" alt="" class="img-svg">
+            <a href="#">Головна</a>
+        </li>
+    </ul>
+    <div class="consignment">
+        <div class="page_news_top">
+            <h1 class="text_big_all">Партія</h1>
+        </div>
+        <div id="party">
+            <div class="party_select_mob">
+                <select class="ui dropdown news_dropdown">
+                    <option value="Party_about" data-href="./results.html">О партії</option>
+                    <option value="Party_program" data-href="./results.html">Программа партії</option>
+                    <option value="Party_initiative" data-href="./results.html">Іниціатива партії</option>
+                    <option value="Party_multimedia" data-href="./result.html">Мультимедіа</option>
+                    <option value="Party_rest" data-href="./result.html">Мерч/Лого/Брендбук</option>
+                </select>
+            </div>
+            <div class="ui secondary menu">
+                <a class="item" data-tab="Party_about">О партії</a>
+                <a class="item " data-tab="Party_program">Программа партії</a>
+                <a class="item" data-tab="Party_initiative">Іниціатива партії</a>
+                <a class="item" data-tab="Party_multimedia">Мультимедіа</a>
+                <a class="item active" data-tab="Party_rest">Мерч/Лого/Брендбук</a>
+            </div>
+            <div class="ui tab" data-tab="Party_about">
+                <div class="news_page_l_content">
+                    <h2>Кожен може керувати</h2>
+                    <br>
+                    <p><strong>Якийсь заголовок, який спобудить виборця натиснути кнопку</strong>
+                    </p>
+                    <div class="video_block">
+                        <div class="button_play">
+                            <img src="./img/Polygon%202.svg" class="img-svg" alt="">
+                        </div>
+                        <video controls width="710" height="538" poster="./img/Rectangle%2017.png" preload="none">
+                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="news_page_l_content_size">
+                        <p>До речі, подорожувати Україною поїздом ви можете за водійським посвідченням, ID-карткою або
+                            закордонним паспортом у Дії.
+                        </p>
+                        <p>
+                            Заклади громадського харчування зможуть приймати відвідувачів у приміщенні, але одна умова —
+                            обов'язкове дотримання усіх протиепідемічних заходів. Також українцям, старшим 60 років, з
+                            п'ятниці буде дозволено не дотримуватися самоізоляції. Урядовці дозволили проведення
+                            релігійних заходів та акредитацію освітніх програм ВНЗ, за якими готують студентів.
+                        </p>
+
+                    </div>
+                    <img src="./img/image%2014.png" alt="">
+                    <div class="news_page_l_content_size">
+                        <p>
+                            Крім цього, з 15 червня відновлюється міжнародне авіасполучення з країнами, які відкрили
+                            свої аеропорти для літаків з України. Боротьба з пандемією ще триває, тому закликаємо не
+                            забувати мити руки з милом, обробляти їх антисептиками та носити захисні маски.</p>
+                        <h3>Сьогодні на засіданні Уряд послабив карантин. З 5 червня дозволено роботу ресторанів та
+                            кафе, а також внутрішні авіаперевезення.</h3>
+                        <p>
+                            Заклади громадського харчування зможуть приймати відвідувачів у приміщенні, але одна умова —
+                            обов'язкове дотримання усіх протиепідемічних заходів. Також українцям, старшим 60 років, з
+                            п'ятниці буде дозволено не дотримуватися самоізоляції. Урядовці дозволили проведення
+                            релігійних заходів та акредитацію освітніх програм ВНЗ, за якими готують студентів.
+                        </p>
+                        <h3>Нагадаємо, як отримати послугу ID-14:</h3>
+                        <ul>
+                            <li>Зберіть документи: свідоцтво про народження, довідку про реєстрацію місця проживання та
+                                документи, що посвідчують батьків або одного з них.
+                            </li>
+                            <li>Зверніться до центру надання адміністративних послуг, підрозділу Державної міграційної
+                                служби чи центру обслуговування “Паспортний сервіс” ДП “Документ” за зареєстрованим
+                                місцем проживання. Під час карантину можна звернутися до будь-якого з них незалежно від
+                                реєстрації місця проживання.
+                            </li>
+                            <li>Отримайте паспорт у формі картки на 4 роки.</li>
+                        </ul>
+                        <h3>Користуйтеся цифровими паспортами у П’ятому апеляційному адміністративному суді
+                            Одеси. </h3>
+                        <i>Інформація у ньому легка для сприйняття і розподіляється за темами: залежно від сфери
+                            діяльності ви можете знайти потрібну послугу. Транспорт, будівництво та нерухомість,
+                            інтелектуальна власність, соціальний захист, реєстрація бізнесу — це неповний перелік
+                            сфер послуг, що містяться у Гіді.</i>
+                        <div class="post_scriptum">Александр Волошин</div>
+
+                    </div>
+                    <div class="slider_news">
+                        <div class="slider_block">
+                            <div class="button_left arrow_slider"><img src="./img/arrow_pagination.svg" alt=""></div>
+                            <div class="number_list_slider">
+                                <div class="number_start">1</div>
+                                <div class="rectangle_stick"></div>
+                                <div class="number_end">22</div>
+                            </div>
+                            <div class="button_right arrow_slider">
+                                <img src="./img/arrow_pagination.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="slider_wrapper">
+                            <div class="slider_news_item">
+                                <img src="./img/Rectangle%203.1.png" alt="">
+                            </div>
+                            <div class="slider_news_item">
+                                <img src="./img/Rectangle%203.1.png" alt="">
+                            </div>
+                            <div class="slider_news_item">
+                                <img src="./img/Rectangle%203.1.png" alt="">
+                            </div>
+                            <div class="slider_news_item">
+                                <img src="./img/Rectangle%203.1.png" alt="">
+                            </div>
+                            <div class="slider_news_item">
+                                <img src="./img/Rectangle%203.1.png" alt="">
+                            </div>
+                            <div class="slider_news_item">
+                                <img src="./img/Rectangle%203.1.png" alt="">
+                            </div>
+                            <div class="slider_news_item">
+                                <img src="./img/Rectangle%203.1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui tab" data-tab="Party_program">
+                <section class="party_program">
+                    <div class="party_program_content party_size">
+                        <h2 class="party_program_text"> Программа політичної партії</h2>
+                        <p>До речі, подорожувати Україною поїздом ви можете за водійським посвідченням, ID-карткою або
+                            закордонним паспортом у Дії.
+                        </p>
+                        <p>
+                            Заклади громадського харчування зможуть приймати відвідувачів у приміщенні, але одна умова —
+                            обов'язкове дотримання усіх протиепідемічних заходів. Також українцям, старшим 60 років, з
+                            п'ятниці буде дозволено не дотримуватися самоізоляції. Урядовці дозволили проведення
+                            релігійних
+                            заходів та акредитацію освітніх програм ВНЗ, за якими готують студентів.</p>
+                    </div>
+                    <div class="complex_program">
+                        <div class="voter_page_grid_l_text">Комплексне програмне супровід людини і громадянина протягом
+                            усього життя.
+                        </div>
+                        <div class="complex_program_grid">
+                            <div class="complex_program_items">
+                                <div class="complex_program_items_title">Дитина</div>
+                                <div class="complex_program_items_content">Майбутній член суспільства, який повинен
+                                    отримати здорове харчування, належну освіту і виховання.
+                                </div>
+                            </div>
+                            <div class="complex_program_items">
+                                <div class="complex_program_items_title">Молода людина</div>
+                                <div class="complex_program_items_content">Якого держава повинна забезпечити умови для
+                                    отримання робочого місця і гідної заробітної плати.
+                                </div>
+                            </div>
+                            <div class="complex_program_items">
+                                <div class="complex_program_items_title">Громадянин в розквіті своїх сил і можливостей
+                                </div>
+                                <div class="complex_program_items_content">Який має право на умови для розкриття своїх
+                                    потенційних можливостей, і який приносить користь своєї сім'ї і суспільству.
+                                </div>
+                            </div>
+                            <div class="complex_program_items">
+                                <div class="complex_program_items_title">Літній чоловік</div>
+                                <div class="complex_program_items_content">Який віддав державі свій працездатний вік,
+                                    створював економічні та соціальні блага, і заслуговує гідну пенсію.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="party_program_content party_program_two party_size">
+
+                        <div class="voter_page_grid_l_text">Ми усвідомлюємо, що найвищою цінністю для держави і
+                            політиків повинен стати Людина і Громадянин.
+                        </div>
+                        <p>Вкладаючи в людини, ми вкладаємо в державу. Здоровий, ситий, освічена людина - продуктивний і
+                            працездатна людина. Тільки він може приносити користь собі і державі. Тому в основу Програми
+                            «Партії Шарія», при традиційному її викладі для зручності розповсюдження ідей, покладені в
+                            першу чергу потреби Людини. Його відносини з державою, навколишнім середовищем, системою
+                            освіти і охорони здоров'я, його основними правами, свободами і обов'язками.
+                        </p>
+
+                    </div>
+                    <div class="question_grid party_program_accordion">
+                        <div class="question_grid_row">
+                            <div class="question_grid_row_l">Харьків</div>
+                            <div class="ui styled accordion accordion_food">
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        1. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        <p>Електронний підпис — це електронні дані, які забезпечують цілісність
+                                            документів та ідентифікують особу. Електронний підпис може зберігатися у
+                                            вигляді MobileID, підпису на ID-картці, підпису на “токені” чи захищеному
+                                            носії інформації.
+                                        </p>
+                                        <p>
+                                            За допомогою електронного підпису можна підписувати електронні документи,
+                                            користуватися електронними послугами, реєструватися на державних порталах
+                                            тощо. Документи з цим підписом мають таку саму юридичну силу, як і
+                                            документи, підписані власноруч.
+                                        </p>
+                                        <p>
+                                            Тут ви можете підписати документ за допомогою електронного підпису всього у
+                                            3 кроки.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        2. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        <p>Заклади громадського харчування зможуть приймати відвідувачів у приміщенні,
+                                            але одна
+                                            умова — обов'язкове дотримання усіх протиепідемічних заходів. Також
+                                            українцям,
+                                            старшим 60 років, з п'ятниці буде дозволено не дотримуватися самоізоляції.
+                                            Урядовці
+                                            дозволили проведення релігійних заходів та акредитацію освітніх програм ВНЗ,
+                                            за
+                                            якими готують студентів.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        3. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        Заклади громадського харчування зможуть приймати відвідувачів у приміщенні, але
+                                        одна
+                                        умова — обов'язкове дотримання усіх протиепідемічних заходів. Також українцям,
+                                        старшим
+                                        60 років, з п'ятниці буде дозволено не дотримуватися самоізоляції. Урядовці
+                                        дозволили
+                                        проведення релігійних заходів та акредитацію освітніх програм ВНЗ, за якими
+                                        готують
+                                        студентів.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question_grid_row">
+                            <div class="question_grid_row_l">Охорона здоровь’я</div>
+                            <div class="ui styled accordion accordion_food">
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        1. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        <p>Заклади громадського харчування зможуть приймати відвідувачів у приміщенні,
+                                            але одна
+                                            умова — обов'язкове дотримання усіх протиепідемічних заходів. Також
+                                            українцям,
+                                            старшим 60 років, з п'ятниці буде дозволено не дотримуватися самоізоляції.
+                                            Урядовці
+                                            дозволили проведення релігійних заходів та акредитацію освітніх програм ВНЗ,
+                                            за
+                                            якими готують студентів.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        2. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        <p>Заклади громадського харчування зможуть приймати відвідувачів у приміщенні,
+                                            але одна
+                                            умова — обов'язкове дотримання усіх протиепідемічних заходів. Також
+                                            українцям,
+                                            старшим 60 років, з п'ятниці буде дозволено не дотримуватися самоізоляції.
+                                            Урядовці
+                                            дозволили проведення релігійних заходів та акредитацію освітніх програм ВНЗ,
+                                            за
+                                            якими готують студентів.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question_grid_row">
+                            <div class="question_grid_row_l">Харьків</div>
+                            <div class="ui styled accordion accordion_food">
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        1. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        <p>Електронний підпис — це електронні дані, які забезпечують цілісність
+                                            документів та ідентифікують особу. Електронний підпис може зберігатися у
+                                            вигляді MobileID, підпису на ID-картці, підпису на “токені” чи захищеному
+                                            носії інформації.
+                                        </p>
+                                        <p>
+                                            За допомогою електронного підпису можна підписувати електронні документи,
+                                            користуватися електронними послугами, реєструватися на державних порталах
+                                            тощо. Документи з цим підписом мають таку саму юридичну силу, як і
+                                            документи, підписані власноруч.
+                                        </p>
+                                        <p>
+                                            Тут ви можете підписати документ за допомогою електронного підпису всього у
+                                            3 кроки.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        2. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        <p>Заклади громадського харчування зможуть приймати відвідувачів у приміщенні,
+                                            але одна
+                                            умова — обов'язкове дотримання усіх протиепідемічних заходів. Також
+                                            українцям,
+                                            старшим 60 років, з п'ятниці буде дозволено не дотримуватися самоізоляції.
+                                            Урядовці
+                                            дозволили проведення релігійних заходів та акредитацію освітніх програм ВНЗ,
+                                            за
+                                            якими готують студентів.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        3. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        Заклади громадського харчування зможуть приймати відвідувачів у приміщенні, але
+                                        одна
+                                        умова — обов'язкове дотримання усіх протиепідемічних заходів. Також українцям,
+                                        старшим
+                                        60 років, з п'ятниці буде дозволено не дотримуватися самоізоляції. Урядовці
+                                        дозволили
+                                        проведення релігійних заходів та акредитацію освітніх програм ВНЗ, за якими
+                                        готують
+                                        студентів.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question_grid_row">
+                            <div class="question_grid_row_l">Охорона здоровь’я</div>
+                            <div class="ui styled accordion accordion_food">
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        1. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        <p>Заклади громадського харчування зможуть приймати відвідувачів у приміщенні,
+                                            але одна
+                                            умова — обов'язкове дотримання усіх протиепідемічних заходів. Також
+                                            українцям,
+                                            старшим 60 років, з п'ятниці буде дозволено не дотримуватися самоізоляції.
+                                            Урядовці
+                                            дозволили проведення релігійних заходів та акредитацію освітніх програм ВНЗ,
+                                            за
+                                            якими готують студентів.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion_items">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        2. Тут буде назва питання, може якийсь довгий або короткий?
+                                    </div>
+                                    <div class="content">
+                                        <p>Заклади громадського харчування зможуть приймати відвідувачів у приміщенні,
+                                            але одна
+                                            умова — обов'язкове дотримання усіх протиепідемічних заходів. Також
+                                            українцям,
+                                            старшим 60 років, з п'ятниці буде дозволено не дотримуватися самоізоляції.
+                                            Урядовці
+                                            дозволили проведення релігійних заходів та акредитацію освітніх програм ВНЗ,
+                                            за
+                                            якими готують студентів.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="ui tab" data-tab="Party_initiative">
+                <section class="party_initiative">
+                    <div class="party_initiative_items">
+                        <div class="party_initiative_items_l">
+                            <div class="party_initiative_items_l_text">Що для Вас управління містом у смартфоні?</div>
+                            <div class="party_initiative_items_l_text_s">Якійсь абзац тексту про те, навіщо виборцю
+                                проходити опитування і що він, як виборець, зможе допомогти, якщо він пройде це
+                                опитування. Якійсь абзац тексту про те. навіщо виборцю проходити опитування і що він.
+                            </div>
+                            <a href="#" class="link_party"> Читати докладніше<img src="./img/arrow.svg" class="img-svg"
+                                                                                  alt=""></a>
+                        </div>
+                        <div class="party_initiative_items_r">
+                            <div class="container_interview_items_row">
+                                <div class="interview_icon">
+                                    <img src="./img/idea_2%202.svg" alt="">
+                                </div>
+                                <div class="interview_text">
+                                    <p>Опитування прошли вже:</p>
+                                    <span>24 780 виборців</span>
+                                </div>
+                            </div>
+                            <div class="container_button">
+                                <a href="#" class="button_all">Брати участь в ініціативі</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="party_initiative_items">
+                        <div class="party_initiative_items_l">
+                            <div class="party_initiative_items_l_text">Стань детективом, знайди корупцію</div>
+                            <div class="party_initiative_items_l_text_s">Якійсь абзац тексту про те, навіщо виборцю
+                                проходити опитування і що він, як виборець, зможе допомогти, якщо він пройде це
+                                опитування. Якійсь абзац тексту про те. навіщо виборцю проходити опитування і що він.
+                            </div>
+                            <a href="#" class="link_party">Читати докладніше<img src="./img/arrow.svg" class="img-svg"
+                                                                                 alt=""></a>
+                        </div>
+                        <div class="party_initiative_items_r">
+                            <div class="container_interview_items_row">
+                                <div class="interview_icon">
+                                    <img src="./img/idea_2%202.svg" alt="">
+                                </div>
+                                <div class="interview_text">
+                                    <p>Опитування прошли вже:</p>
+                                    <span>24 780 виборців</span>
+                                </div>
+                            </div>
+                            <div class="container_button">
+                                <a href="#" class="button_all">Брати участь в ініціативі</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="party_initiative_items">
+                        <div class="party_initiative_items_l">
+                            <div class="party_initiative_items_l_text">Скажімо насильству ні!</div>
+                            <div class="party_initiative_items_l_text_s">Якійсь абзац тексту про те, навіщо виборцю
+                                проходити опитування і що він, як виборець, зможе допомогти, якщо він пройде це
+                                опитування. Якійсь абзац тексту про те. навіщо виборцю проходити опитування і що він.
+                            </div>
+                            <a href="#" class="link_party">Читати докладніше<img src="./img/arrow.svg" class="img-svg"
+                                                                                 alt=""></a>
+                        </div>
+                        <div class="party_initiative_items_r">
+                            <div class="container_interview_items_row">
+                                <div class="interview_icon">
+                                    <img src="./img/idea_2%202.svg" alt="">
+                                </div>
+                                <div class="interview_text">
+                                    <p>Опитування прошли вже:</p>
+                                    <span>24 780 виборців</span>
+                                </div>
+                            </div>
+                            <div class="container_button">
+                                <a href="#" class="button_all">Брати участь в ініціативі</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="ui tab" data-tab="Party_multimedia">
+                <section class="multimedia">
+                    <div class="multimedia_grid">
+                        <div class="page_news_grid_items">
+                            <a href="#">
+                                <div class="container_news_img">
+                                    <img src="./img/ImageMulti.png" alt="">
+                                    <div class="label_all yellow">
+                                        <img src="./img/photo.svg " alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="container_news_content">
+                                <a href="#" class="container_news_content_t_b">
+                                    Тут повинен бути якись слоган заголовок новини не більш ниж у три строки
+                                </a>
+                            </div>
+                        </div>
+                        <div class="page_news_grid_items">
+                            <a href="#">
+                                <div class="container_news_img">
+                                    <img src="./img/ImageMulti.png" alt="">
+                                    <div class="label_all pink">
+                                        <img src="./img/play-button%201.svg" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="container_news_content">
+                                <a href="#" class="container_news_content_t_b">
+                                    Тут повинен бути якись слоган заголовок новини не більш ниж у три строки
+                                </a>
+                            </div>
+                        </div>
+                        <div class="page_news_grid_items">
+                            <a href="#">
+                                <div class="container_news_img">
+                                    <img src="./img/ImageMulti.png" alt="">
+                                    <div class="label_all pink">
+                                        <img src="./img/play-button%201.svg" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="container_news_content">
+                                <a href="#" class="container_news_content_t_b">
+                                    Тут повинен бути якись слоган заголовок новини не більш ниж у три строки
+                                </a>
+                            </div>
+                        </div>
+                        <div class="page_news_grid_items">
+                            <a href="#">
+                                <div class="container_news_img">
+                                    <img src="./img/ImageMulti.png" alt="">
+                                    <div class="label_all yellow">
+                                        <img src="./img/photo.svg " alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="container_news_content">
+                                <a href="#" class="container_news_content_t_b">
+                                    Тут повинен бути якись слоган заголовок новини не більш ниж у три строки
+                                </a>
+                            </div>
+                        </div>
+                        <div class="page_news_grid_items">
+                            <a href="#">
+                                <div class="container_news_img">
+                                    <img src="./img/ImageMulti.png" alt="">
+                                    <div class="label_all pink">
+                                        <img src="./img/play-button%201.svg" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="container_news_content">
+                                <a href="#" class="container_news_content_t_b">
+                                    Тут повинен бути якись слоган заголовок новини не більш ниж у три строки
+                                </a>
+                            </div>
+                        </div>
+                        <div class="page_news_grid_items">
+                            <a href="#">
+                                <div class="container_news_img">
+                                    <img src="./img/ImageMulti.png" alt="">
+                                    <div class="label_all pink">
+                                        <img src="./img/play-button%201.svg" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="container_news_content">
+                                <a href="#" class="container_news_content_t_b">
+                                    Тут повинен бути якись слоган заголовок новини не більш ниж у три строки
+                                </a>
+                            </div>
+                        </div>
+                        <div class="page_news_grid_items">
+                            <a href="#">
+                                <div class="container_news_img">
+                                    <img src="./img/ImageMulti.png" alt="">
+                                    <div class="label_all yellow">
+                                        <img src="./img/photo.svg " alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="container_news_content">
+                                <a href="#" class="container_news_content_t_b">
+                                    Тут повинен бути якись слоган заголовок новини не більш ниж у три строки
+                                </a>
+                            </div>
+                        </div>
+                        <div class="page_news_grid_items">
+                            <a href="#">
+                                <div class="container_news_img">
+                                    <img src="./img/ImageMulti.png" alt="">
+                                    <div class="label_all pink">
+                                        <img src="./img/play-button%201.svg" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="container_news_content">
+                                <a href="#" class="container_news_content_t_b">
+                                    Тут повинен бути якись слоган заголовок новини не більш ниж у три строки
+                                </a>
+                            </div>
+                        </div>
+                        <div class="page_news_grid_items">
+                            <a href="#">
+                                <div class="container_news_img">
+                                    <img src="./img/ImageMulti.png" alt="">
+                                    <div class="label_all pink">
+                                        <img src="./img/play-button%201.svg" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="container_news_content">
+                                <a href="#" class="container_news_content_t_b">
+                                    Тут повинен бути якись слоган заголовок новини не більш ниж у три строки
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_news_bottom">
+                        <a href="#" class="show_button">
+                            Показать ещё
+                        </a>
+                        <div class="ui pagination menu">
+                            <a class="item arrow_left">
+                                <img src="./img/arrow_pagination.svg" alt="">
+                            </a>
+                            <a class="active item">
+                                1
+                            </a>
+                            <div class="disabled item">
+                                ...
+                            </div>
+                            <a class="item">
+                                10
+                            </a>
+                            <a class="item">
+                                11
+                            </a>
+                            <a class="item">
+                                12
+                            </a>
+                            <a class="item arrow_right">
+                                <img src="./img/arrow_pagination.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="ui active  tab" data-tab="Party_rest">
+                <section class="party_rest">
+                    <div class="party_rest_content">
+                        <div class="party_rest_content_l">
+                            <h2 class="party_rest_content_l_text">
+                                Якись невеличкий заголовок
+                            </h2>
+                            <p>
+                                До речі, подорожувати Україною поїздом ви можете за водійським посвідченням, ID-карткою
+                                або закордонним паспортом у Дії.
+                            </p>
+                            <p>
+                                Заклади громадського харчування зможуть приймати відвідувачів у приміщенні, але одна
+                                умова — обов'язкове дотримання усіх протиепідемічних заходів. Також українцям, старшим
+                                60 років, з п'ятниці буде дозволено не дотримуватися самоізоляції. Урядовці дозволили
+                                проведення релігійних заходів та акредитацію освітніх програм ВНЗ, за якими готують
+                                студентів. </p>
+                            <p>
+                                До речі, подорожувати Україною поїздом ви можете за водійським посвідченням, ID-карткою
+                                або закордонним паспортом у Дії.
+                            </p>
+                        </div>
+                        <div class="party_rest_content_r">
+                            <img src="./img/image%2024.png" alt="">
+                        </div>
+                    </div>
+                    <div class="party_rest_one party_items">
+                        <div class="party_rest_top">
+                            <div class="party_rest_number">1</div>
+                            <div class="party_rest_top_text">Будь з нами в соціальніх мережах</div>
+                        </div>
+                        <div class="hashtag">
+                            <div class="hashtag_l">
+                                <div class="hashtag_l_text">Головний хештег</div>
+                                <a href="#" target="_blank" class="hashtag_text_b">#НазваХештегу</a>
+                            </div>
+                            <div class="hashtag_r">
+                                <div class="hashtag_l_text">Головний хештег</div>
+                                <div class="hashtag_text_all">
+                                    <a href="#" target="_blank" class="hashtag_text_s">#НазваХештегу</a>
+                                    <a href="#" target="_blank" class="hashtag_text_s">#Назва</a>
+                                    <a href="#" target="_blank" class="hashtag_text_s">#НазваВеликогоХештегу</a>
+                                    <a href="#" target="_blank" class="hashtag_text_s">#НазваХештегу</a>
+                                    <a href="#" target="_blank" class="hashtag_text_s">#Назва </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="facebook_cover">
+                            <div class="facebook_cover_l">
+                                <div class="facebook_cover_top">Став нашу обкладинку на facebook</div>
+                                <a href="#" class="button_rest">Завантажити обкладинку</a>
+                                <div class="img_cover">
+                                    <img src="./img/cover.png" alt="">
+                                </div>
+                            </div>
+                            <div class="facebook_cover_r ">
+                                <div class="facebook_cover_top">Став рамку на фото на facebook</div>
+                                <div class="facebook_cover_r_info">
+                                    <p><span>1.</span> Натисни «Оновити фото», потім «Додати рамку» натисни на кнопку
+                                        "Встановити"</p>
+                                    <p>
+                                        <span>2.</span> Введи в пошуку «Назва» або «Назва»</p>
+                                    <p>
+                                        <span>3.</span> Вибирай будь-яку з рамок і додавай до себе на фото</p>
+                                </div>
+                                <div class="button_container_facebook">
+                                    <div class="button_container_facebook_text">або просто натисни на кнопку</div>
+                                    <a href="#" class="button_rest">Встановити</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="party_rest_two party_items">
+                        <div class="party_rest_top">
+                            <div class="party_rest_number">2</div>
+                            <div class="party_rest_top_text">Спробуй безкоштовно наші стікер-паки в telegram</div>
+                        </div>
+                        <div class="sticker_telegrams">
+                            <div class="sticker_telegrams_l">
+                                <div class="sticker_telegrams_img">
+                                    <img src="./img/image%2025.png" alt="">
+                                </div>
+                                <div class="sticker_telegrams_info">
+                                    <div class="sticker_telegrams_info_text">
+                                        “Назва стікер-паку”
+                                    </div>
+                                    <a href="" class="button_rest">Встановити</a>
+                                </div>
+                            </div>
+                            <div class="sticker_telegrams_r">
+                                <div class="sticker_telegrams_img">
+                                    <img src="./img/image%2026.png" alt="">
+                                </div>
+                                <div class="sticker_telegrams_info">
+                                    <div class="sticker_telegrams_info_text">
+                                        “Назва стікер-паку”
+                                    </div>
+                                    <a href="" class="button_rest">Встановити</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="party_rest_three party_items">
+                        <div class="party_rest_top">
+                            <div class="party_rest_number">3</div>
+                            <div class="party_rest_top_text">Роздрукуй нашу атрибутику</div>
+                        </div>
+                        <div class="attribution_print">
+                            <div class="attribution_print_item">
+                                <div class="attribution_print_img">
+                                    <img src="./img/image%2027.png" alt="">
+                                </div>
+                                <div class="attribution_print_text">Постер</div>
+                                <a href="#" class="button_rest">Завантажити макет</a>
+                            </div>
+                            <div class="attribution_print_item">
+                                <div class="attribution_print_img">
+                                    <img src="./img/image%2028.png" alt="">
+                                </div>
+                                <div class="attribution_print_text">Білборд</div>
+                                <a href="#" class="button_rest">Завантажити макет</a>
+                            </div>
+                            <div class="attribution_print_item">
+                                <div class="attribution_print_img">
+                                    <img src="./img/image28.png" alt="">
+                                </div>
+                                <div class="attribution_print_text">Листівка</div>
+                                <a href="#" class="button_rest">Завантажити макет</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="party_rest_four">
+                        <div class="party_rest_top">
+                            <div class="party_rest_number">4</div>
+                            <div class="party_rest_top_text">Використовуй наш стиль</div>
+                        </div>
+                        <div class="style_page_grid">
+                            <div class="style_page_item">
+                                <div class="style_page_text">
+                                    <div class="style_color">Синій</div>
+                                    <div class="style_color_hash">2D8CFF</div>
+                                </div>
+                                <div class="line_color">
+
+                                </div>
+                            </div>
+                            <div class="style_page_item">
+                                <div class="style_page_text">
+                                    <div class="style_color">Синьо-чорний</div>
+                                    <div class="style_color_hash">0B0F30</div>
+                                </div>
+                                <div class="line_color">
+
+                                </div>
+                            </div>
+                            <div class="style_page_item">
+                                <div class="style_page_text">
+                                    <div class="style_color">Жовтий</div>
+                                    <div class="style_color_hash">FED674</div>
+                                </div>
+                                <div class="line_color">
+
+                                </div>
+                            </div>
+                            <div class="style_page_item">
+                                <div class="style_page_text">
+                                    <div class="style_color">Темно-сірий</div>
+                                    <div class="style_color_hash">464849</div>
+                                </div>
+                                <div class="line_color">
+
+                                </div>
+                            </div>
+                            <div class="style_page_item">
+                                <div class="style_page_text">
+                                    <div class="style_color">Світло-сірий</div>
+                                    <div class="style_color_hash">ECECF2</div>
+                                </div>
+                                <div class="line_color">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="logo_grid">
+                            <div class="logo_grid_item">
+                                <div class="logo_grid_item_text">Основний логотип</div>
+                                <p>Логотип партії складається з шрифтового накреслення, виконаного геометричним
+                                    гротеском з помірними пропорціями знаків, гармонійно вписаного в унікальний
+                                    графічний образ.</p>
+                                <div class="logo_grid_image">
+                                    <div class="logo_image">
+                                        <img src="./img/logo_image.png" alt="">
+                                    </div>
+                                    <div class="logo_image">
+                                        <img src="./img/logo_image.png" alt="">
+                                    </div>
+                                    <div class="logo_image">
+                                        <img src="./img/logo_image.png" alt="">
+                                    </div>
+                                </div>
+                                <a href="#" class="button_rest">Завантажити макет</a>
+                            </div>
+                            <div class="logo_grid_item">
+                                <div class="logo_grid_item_text">Додаткові версії</div>
+                                <p>Логотип партії складається з шрифтового накреслення, виконаного геометричним
+                                    гротеском з помірними пропорціями знаків, гармонійно вписаного в унікальний
+                                    графічний образ.</p>
+                                <div class="logo_grid_image">
+                                    <div class="logo_image">
+                                        <img src="./img/logo_image.png" alt="">
+                                    </div>
+                                    <div class="logo_image">
+                                        <img src="./img/logo_image.png" alt="">
+                                    </div>
+                                    <div class="logo_image">
+                                        <img src="./img/logo_image.png" alt="">
+                                    </div>
+                                </div>
+                                <a href="#" class="button_rest">Завантажити макет</a>
+                            </div>
+                        </div>
+                        <div class="party_all">
+                            <div class="party_all_item brand_book">
+                                <div class="logo_grid_item_text">Брендбук</div>
+                                <p>Всі приклади нашого стилю і то, як його використовувати, ти можеш побачити, скачавши
+                                    наш брендбук.</p>
+                                <a href="#" class="button_rest">Завантажити</a>
+                            </div>
+                            <div class="party_all_item">
+                                <div class="logo_grid_item_text">Шрифт - Gilroy</div>
+                                <p>Шрифт є одним з найважливіших елементів, що становлять фірмову айдентику.</p>
+                                <p>
+                                    Для набору комунікаційних матеріалів, корпоративних елементів, заголовків і
+                                    основного масиву тексту використовується гарнітура Gilroy в накресленнях regular,
+                                    medium і bold.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="container_idea container_all">
+    <a href="#" class="container_idea_items">
+        <div class="container_idea_icon">
+            <img src="./img/join_2.svg" alt="">
+        </div>
+        <div class="container_idea_text">Приєднуйся до нашої партіі</div>
+    </a>
+    <a href="#" class="container_idea_items">
+        <div class="container_idea_icon">
+            <img src="./img/elections_2.svg" alt="">
+        </div>
+        <div class="container_idea_text">Контролюй вибори</div>
+    </a>
+    <a href="#" class="container_idea_items">
+        <div class="container_idea_icon">
+            <img src="./img/idea_2%201.svg" alt="">
+        </div>
+        <div class="container_idea_text">Створюй власні ініціативи</div>
+    </a>
+    <a href="#" class="container_idea_items">
+        <div class="container_idea_icon">
+            <img src="./img/politician_1%201.svg" alt="">
+        </div>
+        <div class="container_idea_text">Як стати депутатом</div>
+    </a>
+    <a href="#" class="container_idea_items">
+        <div class="container_idea_icon">
+            <img src="./img/mailing_2%201.svg" alt="">
+        </div>
+        <div class="container_idea_text">Будь в курсі там, де тобі зручно!</div>
+    </a>
+</section>
+<div class="container_subscribe container_all">
+    <div class="container_subscribe_l">
+        <p>Нас вже:</p>
+        <span>56 012</span>
+    </div>
+    <div class="container_subscribe_m">
+        <div class="container_subscribe_text">Слідкуй там де тобі зручно</div>
+        <div class="soc_subscribe_grid">
+            <div class="soc_subscribe_items">
+                <div class="soc_subscribe_items_text">Соц. мережі:</div>
+                <div class="header_top_soc_link">
+                    <a href="#" target="_blank"><img src="./img/Istagram.svg" class="img-svg" alt=""></a>
+                    <a href="#" target="_blank"><img src="./img/Fasebook%201.svg" class="img-svg" alt=""></a>
+                    <a href="#" target="_blank"><img src="./img/Twitter.svg" class="img-svg" alt=""></a>
+                    <a href="#" target="_blank"><img src="./img/Youtype%201.svg" class="img-svg" alt=""></a>
+                </div>
+            </div>
+            <div class="soc_subscribe_items ">
+                <div class="soc_subscribe_items_text">Месенджери:</div>
+                <div class="header_top_soc_link messenger">
+                    <a href="#" target="_blank"><img src="./img/Viber.svg" class="img-svg" alt=""></a>
+                    <a href="#" target="_blank"><img src="./img/Telegram.svg" class="img-svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="container_subscribe_r">
+        <div class="container_subscribe_text">Я хочу підписатися на розсилку</div>
+        <p>Отримувати щотижневий дайджест про партійні події і досягнення</p>
+        <div class="container_subscribe_block">
+            <input type="email" placeholder="Введіть Ваш e-mail ">
+            <button class="button_all subscribe_button">Підписатися</button>
+        </div>
+    </form>
+</div>
+<footer>
+    <nav class="header_bottom">
+        <a href="/" class=" ">
+            <img src="./img/Button.svg" alt="logo">
+        </a>
+        <ul class="menu_list">
+            <li><a href="#">Новини</a></li>
+            <li><a href="#">Вибори 2020</a></li>
+            <li><a href="#">Обличчя</a></li>
+            <li><a href="#">Партія</a></li>
+            <li><a href="#">Візьми участь</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </nav>
+    <div class="footer_bottom">
+        <div class="footer_bottom_items">
+            <a href="#" class="version_glasses d_flex">
+                <div class="icon">
+                    <img src="./img/eye%201.svg" alt="">
+                </div>
+                Версія для слабозорих
+            </a>
+            <div class="language_footer">
+                <div class="footer_text">Виберіть мову веб сайту:</div>
+                <div class="language_footer_links d_flex">
+                    <a href="#" class="active">Укр</a>|<a href="#">Рус</a>
+                </div>
+            </div>
+            <div class="hot_line_footer">
+                <div class="footer_text">Гаряча лінія</div>
+                <a href="tel:+88006348123" class="active">8 800 63 48 123</a>
+            </div>
+        </div>
+        <div class="footer_bottom_items">
+            <ul class="footer_links">
+                <li><a href="#">Програма партії</a></li>
+                <li><a href="#">Ініціативи партії</a></li>
+                <li><a href="#">Опитування виборців</a></li>
+                <li><a href="#">Фінансова підтримка</a></li>
+                <li><a href="#">Питання та відповіді</a></li>
+                <li><a href="#">Мультімедіа</a></li>
+                <li><a href="#">Мерч/Лого/Брендбук</a></li>
+                <li><a href="#">Представництва</a></li>
+            </ul>
+        </div>
+        <div class="footer_bottom_items footer_bottom_l_page">
+            <a href="#" class="footer_links_page">
+                <div class="footer_icon">
+                    <img src="./img/join.svg" alt="">
+                </div>
+                <div class="footer_links_text">
+                    Приєднуйся до партії
+                </div>
+            </a>
+            <a href="#" class="footer_links_page">
+                <div class="footer_icon">
+                    <img src="./img/elections.svg" alt="">
+                </div>
+                <div class="footer_links_text">
+                    Контролюй вибори
+                </div>
+            </a>
+            <a href="#" class="footer_links_page">
+                <div class="footer_icon">
+                    <img src="./img/politician%201.svg" alt="">
+                </div>
+                <div class="footer_links_text">
+                    Як стати депутатом
+                </div>
+            </a>
+            <a href="#" class="footer_links_page">
+                <div class="footer_icon">
+                    <img src="./img/idea.svg" alt="">
+                </div>
+                <div class="footer_links_text">
+                    Створюй власні ініціативи
+                </div>
+            </a>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmhz8lPDq1So_4IZeIaytwyyscDz9PXkI&libraries=places&sensor=false"></script>
+<script src="script.js" type="text/javascript"></script>
+</html>
